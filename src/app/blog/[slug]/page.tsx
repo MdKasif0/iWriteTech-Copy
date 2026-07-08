@@ -14,20 +14,12 @@ import { AuthorCard } from "@/components/blog/AuthorCard";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
 
 interface Props {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 }
 
-export function generateStaticParams() {
-  const posts = getAllPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
-
-export function generateMetadata({ params }: Props): Metadata {
-  const postData = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const postData = getPostBySlug(slug);
 
   if (!postData) {
     return {
@@ -64,8 +56,16 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const postData = getPostBySlug(params.slug);
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const postData = getPostBySlug(slug);
 
   if (!postData) {
     notFound();

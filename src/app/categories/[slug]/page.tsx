@@ -8,9 +8,9 @@ import { getAllPosts } from "@/lib/posts";
 import { Badge } from "@/components/ui/badge";
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Generate static params for all defined categories
@@ -21,8 +21,9 @@ export function generateStaticParams() {
 }
 
 // Generate per-category SEO metadata
-export function generateMetadata({ params }: Props): Metadata {
-  const category = CATEGORIES_CONFIG[params.slug];
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const category = CATEGORIES_CONFIG[slug];
 
   if (!category) {
     return {
@@ -45,8 +46,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function CategoryPage({ params }: Props) {
-  const category = CATEGORIES_CONFIG[params.slug];
+export default async function CategoryPage({ params }: Props) {
+  const { slug } = await params;
+  const category = CATEGORIES_CONFIG[slug];
 
   if (!category) {
     notFound();
