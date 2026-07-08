@@ -5,7 +5,7 @@ interface ProsConsBoxProps {
   cons: string[];
 }
 
-export function ProsConsBox({ pros, cons }: ProsConsBoxProps) {
+export function ProsConsBox({ pros = [], cons = [] }: ProsConsBoxProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8">
       <div className="bg-card border border-border rounded-xl p-5 md:p-6">

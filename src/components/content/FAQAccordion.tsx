@@ -9,7 +9,7 @@ interface FAQAccordionProps {
   items: FAQItem[];
 }
 
-export function FAQAccordion({ items }: FAQAccordionProps) {
+export function FAQAccordion({ items = [] }: FAQAccordionProps) {
   return (
     <div className="my-8">
       <h3 className="font-semibold text-xl mb-4 text-foreground">Frequently Asked Questions</h3>

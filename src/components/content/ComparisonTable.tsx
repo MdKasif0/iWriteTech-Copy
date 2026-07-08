@@ -10,7 +10,7 @@ interface ComparisonTableProps {
   data: Record<string, string | React.ReactNode>[];
 }
 
-export function ComparisonTable({ columns, data }: ComparisonTableProps) {
+export function ComparisonTable({ columns = [], data = [] }: ComparisonTableProps) {
   return (
     <div className="w-full overflow-x-auto my-8 rounded-xl border border-border bg-card">
       <table className="w-full text-left border-collapse text-sm">
