@@ -1,0 +1,179 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-geist-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #FAF8F3;
+  --foreground: #1C1A17;
+  --card: #F1ECE1;
+  --card-foreground: #1C1A17;
+  --popover: #F1ECE1;
+  --popover-foreground: #1C1A17;
+  --primary: #866432;
+  --primary-foreground: #FAF8F3;
+  --secondary: #F1ECE1;
+  --secondary-foreground: #1C1A17;
+  --muted: #F1ECE1;
+  --muted-foreground: #665f57;
+  --accent: #F1ECE1;
+  --accent-foreground: #866432;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: #E4DDCE;
+  --input: #E4DDCE;
+  --ring: #866432;
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: #FAF8F3;
+  --sidebar-foreground: #1C1A17;
+  --sidebar-primary: #866432;
+  --sidebar-primary-foreground: #FAF8F3;
+  --sidebar-accent: #F1ECE1;
+  --sidebar-accent-foreground: #1C1A17;
+  --sidebar-border: #E4DDCE;
+  --sidebar-ring: #866432;
+}
+
+.dark {
+  --background: #0E0D0C;
+  --foreground: #F2EEE6;
+  --card: #1B1917;
+  --card-foreground: #F2EEE6;
+  --popover: #1B1917;
+  --popover-foreground: #F2EEE6;
+  --primary: #C9A66B;
+  --primary-foreground: #0E0D0C;
+  --secondary: #1B1917;
+  --secondary-foreground: #F2EEE6;
+  --muted: #1B1917;
+  --muted-foreground: #a69f96;
+  --accent: #1B1917;
+  --accent-foreground: #C9A66B;
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: #2C2925;
+  --input: #2C2925;
+  --ring: #C9A66B;
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: #0E0D0C;
+  --sidebar-foreground: #F2EEE6;
+  --sidebar-primary: #C9A66B;
+  --sidebar-primary-foreground: #0E0D0C;
+  --sidebar-accent: #1B1917;
+  --sidebar-accent-foreground: #F2EEE6;
+  --sidebar-border: #2C2925;
+  --sidebar-ring: #C9A66B;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  /* Global Accessibility Focus Ring */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@utility display-xl {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@utility display-lg {
+  font-size: 3rem;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+@utility heading {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+@utility body {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+@utility caption {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-muted-foreground);
+}
+
+@utility mono-data {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
