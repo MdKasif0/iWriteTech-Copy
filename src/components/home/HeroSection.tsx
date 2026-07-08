@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -77,26 +78,26 @@ export function HeroSection() {
                 </div>
               </div>
 
-              {/* Placeholder image area */}
-              <div className="mx-6 aspect-[4/3] rounded-lg bg-muted flex items-center justify-center">
-                <div className="text-center space-y-2 px-8">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                    <ArrowRight className="h-5 w-5 text-primary" />
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Your first featured article will appear here
-                  </p>
-                </div>
+              {/* Image area */}
+              <div className="relative mx-6 aspect-[4/3] rounded-lg bg-muted overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200&auto=format&fit=crop"
+                  alt="Minimalist Desk Setup"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                />
               </div>
 
               {/* Card footer */}
               <div className="px-6 py-5 space-y-2">
-                <div className="h-5 w-3/4 rounded bg-muted" />
-                <div className="h-4 w-1/2 rounded bg-muted/60" />
+                <h3 className="font-semibold text-lg line-clamp-1">The Ultimate Developer Desk Setup for 2026</h3>
+                <p className="text-sm text-muted-foreground line-clamp-1">How to build a clean, productive workspace</p>
                 <div className="flex items-center gap-4 pt-3 text-xs text-muted-foreground">
-                  <span className="mono-data">— min read</span>
+                  <span className="mono-data">5 min read</span>
                   <span>·</span>
-                  <span className="mono-data">— date</span>
+                  <span className="mono-data">July 8, 2026</span>
                 </div>
               </div>
             </div>
