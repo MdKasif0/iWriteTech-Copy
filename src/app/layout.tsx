@@ -3,9 +3,8 @@ import Script from "next/script";
 import { Literata, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { CinematicFooter } from "@/components/ui/motion-footer";
 import { ReadingProgressBar } from "@/components/layout/ReadingProgressBar";
-import { BackToTop } from "@/components/layout/BackToTop";
 import "./globals.css";
 
 const literata = Literata({
@@ -110,13 +109,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ReadingProgressBar />
-          <Navbar />
-          <main className="flex-1 flex flex-col">
-            {children}
-          </main>
-          <Footer />
-          <BackToTop />
+          <div className="flex-1 flex flex-col relative z-10 bg-background min-h-screen rounded-b-3xl border-b border-border shadow-md">
+            <ReadingProgressBar />
+            <Navbar />
+            <main className="flex-1 flex flex-col">
+              {children}
+            </main>
+          </div>
+          <CinematicFooter />
         </ThemeProvider>
       </body>
     </html>
