@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Literata, Geist_Mono } from "next/font/google";
+import { Literata, Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { CinematicFooter } from "@/components/ui/motion-footer";
@@ -9,6 +9,11 @@ import "./globals.css";
 
 const literata = Literata({
   variable: "--font-literata",
+  subsets: ["latin"],
+});
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
@@ -75,7 +80,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${literata.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${literata.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

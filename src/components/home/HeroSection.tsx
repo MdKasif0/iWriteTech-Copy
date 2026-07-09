@@ -66,8 +66,8 @@ export function HeroSection() {
           </div>
 
           {/* Right — Featured Find Card */}
-          <div className="relative">
-            <div className="bg-card border border-border rounded-xl overflow-hidden">
+          <div className="relative pr-4 pb-4">
+            <div className="bg-card border border-border rounded-xl overflow-hidden relative z-10">
               {/* Eyebrow label */}
               <div className="px-6 pt-6 pb-4">
                 <div className="flex items-center gap-3 mb-4">
@@ -79,10 +79,10 @@ export function HeroSection() {
               </div>
 
               {/* Image area */}
-              <div className="relative mx-6 aspect-[4/3] md:aspect-[4/5] rounded-lg bg-muted overflow-hidden">
+              <div className="relative mx-6 aspect-[4/3] rounded-lg bg-muted overflow-hidden">
                 <Image
                   src="/images/hero-setup.png"
-                  alt="Minimalist desk setup with matte black mechanical keyboard and walnut desk surface"
+                  alt="Warm minimalist desk setup with code editor"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -102,8 +102,8 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Decorative corner accent */}
-            <div className="absolute -top-3 -right-3 w-24 h-24 border border-primary/20 rounded-xl -z-10" />
+            {/* Decorative stacked card accent */}
+            <div className="absolute top-4 left-4 w-full h-full border border-border/50 rounded-xl -z-10" />
           </div>
         </div>
       </div>
