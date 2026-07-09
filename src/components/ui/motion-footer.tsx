@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BookOpen, Info, ArrowUp } from "lucide-react";
@@ -272,6 +273,18 @@ export function CinematicFooter() {
 
     return () => ctx.revert();
   },[]);
+
+  // Refresh ScrollTrigger on route change so triggers recalculate for the new page height
+  const pathname = usePathname();
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Small timeout allows Next.js to fully render the new DOM before recalculating
+      const timer = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [pathname]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
