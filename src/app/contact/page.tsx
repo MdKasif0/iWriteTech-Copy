@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Mail, MessageSquare, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us | TechFinds",
-  description: "Get in touch with the TechFinds team for inquiries, feedback, or partnerships.",
+  title: "Contact Us | iWriteTech",
+  description: "Get in touch with the iWriteTech team for inquiries, feedback, or partnerships.",
   alternates: {
     canonical: "/contact",
   },
@@ -38,8 +38,8 @@ export default function ContactPage() {
               <div>
                 <h3 className="font-semibold text-lg text-foreground mb-1">Email Us</h3>
                 <p className="text-muted-foreground mb-2">For general inquiries and support.</p>
-                <a href="mailto:hello@techfinds.com" className="font-medium text-primary hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm">
-                  hello@techfinds.com
+                <a href="mailto:hello@iwritetech.com" className="font-medium text-primary hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm">
+                  hello@iwritetech.com
                 </a>
               </div>
             </div>
@@ -51,8 +51,8 @@ export default function ContactPage() {
               <div>
                 <h3 className="font-semibold text-lg text-foreground mb-1">Partnerships</h3>
                 <p className="text-muted-foreground mb-2">For brand collaborations and sponsorships.</p>
-                <a href="mailto:partners@techfinds.com" className="font-medium text-primary hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm">
-                  partners@techfinds.com
+                <a href="mailto:partners@iwritetech.com" className="font-medium text-primary hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm">
+                  partners@iwritetech.com
                 </a>
               </div>
             </div>

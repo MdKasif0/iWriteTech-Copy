@@ -1,4 +1,4 @@
-# TechFinds — Launch Article Topic & Keyword Research
+# iWriteTech — Launch Article Topic & Keyword Research
 
 *A note on methodology: this list is built from current (2026) trend research and standard SEO/Pinterest content patterns for this niche — not pulled from a paid keyword tool. Before committing writing time to any of these, run the primary keyword through Google Keyword Planner, Ahrefs, or Ubersuggest to confirm real search volume and difficulty, and check Pinterest Trends for seasonal timing. Treat this as a strong starting shortlist, not final validated data.*
 

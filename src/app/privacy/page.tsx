@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | TechFinds",
-  description: "Learn how TechFinds collects, uses, and protects your data.",
+  title: "Privacy Policy | iWriteTech",
+  description: "Learn how iWriteTech collects, uses, and protects your data.",
   alternates: {
     canonical: "/privacy",
   },
@@ -26,7 +26,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="heading mb-6">1. Introduction</h2>
           <div className="text-lg text-foreground/80 leading-relaxed space-y-6">
-            <p>TechFinds (&quot;TechFinds,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates [techfinds.com] (the &quot;Site&quot;). This Privacy Policy explains what information we collect when you visit the Site, how we use it, and the choices you have.</p>
+            <p>iWriteTech (&quot;iWriteTech,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates [iwritetech.com] (the &quot;Site&quot;). This Privacy Policy explains what information we collect when you visit the Site, how we use it, and the choices you have.</p>
             <p>By using the Site, you agree to the collection and use of information as described in this policy. If you don&apos;t agree, please don&apos;t use the Site.</p>
           </div>
         </section>
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
             </ul>
 
             <h3 className="font-semibold text-foreground text-xl pt-4">Information from third parties</h3>
-            <p>If you arrive at TechFinds via Pinterest, Google, or another platform, that platform may share limited referral data with our analytics tools (e.g., which page you landed on).</p>
+            <p>If you arrive at iWriteTech via Pinterest, Google, or another platform, that platform may share limited referral data with our analytics tools (e.g., which page you landed on).</p>
           </div>
         </section>
 
@@ -125,14 +125,14 @@ export default function PrivacyPage() {
                 </tbody>
               </table>
             </div>
-            <p>When you click an affiliate link on TechFinds and are taken to a retailer&apos;s site (such as Amazon), that retailer&apos;s own privacy policy governs any data they collect from that point forward — we don&apos;t have visibility into or control over what happens on their site.</p>
+            <p>When you click an affiliate link on iWriteTech and are taken to a retailer&apos;s site (such as Amazon), that retailer&apos;s own privacy policy governs any data they collect from that point forward — we don&apos;t have visibility into or control over what happens on their site.</p>
           </div>
         </section>
 
         <section>
           <h2 className="heading mb-6">6. Affiliate Links & Cookies</h2>
           <div className="text-lg text-foreground/80 leading-relaxed space-y-6">
-            <p>TechFinds participates in affiliate marketing programs, including the Amazon Associates Program. When you click certain product links on this Site, a cookie may be placed by the retailer to track that the referral came from TechFinds, so we can earn a commission on qualifying purchases. This does not affect the price you pay. See our <Link href="/affiliate-disclosure" className="text-primary hover:underline">Affiliate Disclosure</Link> for more detail.</p>
+            <p>iWriteTech participates in affiliate marketing programs, including the Amazon Associates Program. When you click certain product links on this Site, a cookie may be placed by the retailer to track that the referral came from iWriteTech, so we can earn a commission on qualifying purchases. This does not affect the price you pay. See our <Link href="/affiliate-disclosure" className="text-primary hover:underline">Affiliate Disclosure</Link> for more detail.</p>
           </div>
         </section>
 
@@ -148,7 +148,7 @@ export default function PrivacyPage() {
               <li><strong>Object to or restrict</strong> certain processing (where applicable under GDPR)</li>
               <li><strong>Data portability</strong> (where applicable under GDPR)</li>
             </ul>
-            <p>To exercise any of these rights, contact us at [privacy@techfinds.com]. We&apos;ll respond within a reasonable timeframe and in accordance with applicable law.</p>
+            <p>To exercise any of these rights, contact us at [privacy@iwritetech.com]. We&apos;ll respond within a reasonable timeframe and in accordance with applicable law.</p>
             <p><strong>California residents:</strong> you have rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information is collected and the right to opt out of its sale (note: we do not sell personal information).</p>
             <p><strong>EU/UK residents:</strong> our legal basis for processing your data is typically legitimate interest (site analytics, security) or consent (newsletter signups, non-essential cookies).</p>
           </div>
@@ -164,7 +164,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="heading mb-6">9. Children&apos;s Privacy</h2>
           <div className="text-lg text-foreground/80 leading-relaxed space-y-6">
-            <p>TechFinds is not directed at children under 13 (or the applicable age of digital consent in your jurisdiction), and we do not knowingly collect personal information from children. If you believe a child has provided us with personal information, contact us and we&apos;ll delete it.</p>
+            <p>iWriteTech is not directed at children under 13 (or the applicable age of digital consent in your jurisdiction), and we do not knowingly collect personal information from children. If you believe a child has provided us with personal information, contact us and we&apos;ll delete it.</p>
           </div>
         </section>
 
@@ -178,7 +178,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="heading mb-6">11. International Visitors</h2>
           <div className="text-lg text-foreground/80 leading-relaxed space-y-6">
-            <p>TechFinds is accessed globally. If you&apos;re visiting from outside [your primary country of operation], your information may be processed in [country], which may have different data protection laws than your home country.</p>
+            <p>iWriteTech is accessed globally. If you&apos;re visiting from outside [your primary country of operation], your information may be processed in [country], which may have different data protection laws than your home country.</p>
           </div>
         </section>
 
@@ -193,7 +193,7 @@ export default function PrivacyPage() {
           <h2 className="heading mb-6">13. Contact Us</h2>
           <div className="text-lg text-foreground/80 leading-relaxed space-y-6">
             <p>Questions about this Privacy Policy? Reach out at:</p>
-            <p><strong>Email:</strong> [privacy@techfinds.com]<br /><strong>[Business address, if applicable]</strong></p>
+            <p><strong>Email:</strong> [privacy@iwritetech.com]<br /><strong>[Business address, if applicable]</strong></p>
           </div>
         </section>
       </div>

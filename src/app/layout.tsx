@@ -26,25 +26,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://techfinds.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://iwritetech.com"),
   title: {
-    template: "%s | TechFinds",
-    default: "TechFinds | Curated, aesthetic tech for your desk",
+    template: "%s | iWriteTech",
+    default: "iWriteTech | Curated, aesthetic tech for your desk",
   },
   description: "Curated, tested, aesthetic tech for your desk. Discover minimal setups, mechanical keyboards, and productivity gadgets.",
   openGraph: {
-    title: "TechFinds | Curated, aesthetic tech for your desk",
+    title: "iWriteTech | Curated, aesthetic tech for your desk",
     description: "Curated, tested, aesthetic tech for your desk. Discover minimal setups, mechanical keyboards, and productivity gadgets.",
     url: "/",
-    siteName: "TechFinds",
+    siteName: "iWriteTech",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TechFinds | Curated, aesthetic tech for your desk",
+    title: "iWriteTech | Curated, aesthetic tech for your desk",
     description: "Curated, tested, aesthetic tech for your desk.",
-    creator: "@techfinds",
+    creator: "@iwritetech",
   },
   alternates: {
     canonical: "/",
@@ -63,13 +63,13 @@ export default function RootLayout({
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "TechFinds",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://techfinds.com",
-    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://techfinds.com"}/logo.png`,
+    name: "iWriteTech",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://iwritetech.com",
+    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://iwritetech.com"}/logo.png`,
     sameAs: [
-      "https://twitter.com/techfinds",
-      "https://instagram.com/techfinds",
-      "https://pinterest.com/techfinds"
+      "https://twitter.com/iwritetech",
+      "https://instagram.com/iwritetech",
+      "https://pinterest.com/iwritetech"
     ]
   };
 

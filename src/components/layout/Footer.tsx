@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2 space-y-4">
             <Link href="/" className="font-heading font-bold text-2xl tracking-tight inline-block">
-              TechFinds
+              iWriteTech
             </Link>
             <p className="text-muted-foreground max-w-sm">
               Curating the best aesthetic tech gadgets, desk setups, and productivity tools to inspire your workspace.
@@ -51,9 +51,9 @@ export function Footer() {
         </div>
         
         <div className="mt-12 pt-8 border-t border-border/50 text-xs text-muted-foreground flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-          <p>© {new Date().getFullYear()} TechFinds. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} iWriteTech. All rights reserved.</p>
           <p>
-            TechFinds may earn a commission from links on this site.{" "}
+            iWriteTech may earn a commission from links on this site.{" "}
             <Link href="/affiliate-disclosure" className="underline hover:text-primary transition-colors">
               Read our full disclosure.
             </Link>

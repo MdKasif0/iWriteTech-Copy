@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
     // Dynamic values from URL
     const title = searchParams.has("title")
       ? searchParams.get("title")?.slice(0, 100)
-      : "TechFinds";
+      : "iWriteTech";
       
     const category = searchParams.has("category")
       ? searchParams.get("category")
@@ -81,7 +81,7 @@ export async function GET(request: NextRequest) {
                   color: "#1C1A17",
                 }}
               >
-                TechFinds
+                iWriteTech
               </div>
             </div>
 
@@ -127,7 +127,7 @@ export async function GET(request: NextRequest) {
                   letterSpacing: "0.2em",
                 }}
               >
-                techfinds.com
+                iwritetech.com
               </div>
             </div>
           </div>

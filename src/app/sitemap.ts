@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/posts";
 import { CATEGORIES_CONFIG } from "@/lib/categories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://techfinds.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://iwritetech.com";
 
   // Static routes
   const staticRoutes = [

@@ -2,16 +2,16 @@ import RSS from "rss";
 import { getAllPosts } from "@/lib/posts";
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://techfinds.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://iwritetech.com";
   
   const feed = new RSS({
-    title: "TechFinds",
+    title: "iWriteTech",
     description: "Curated, tested, aesthetic tech for your desk.",
-    generator: "TechFinds RSS",
+    generator: "iWriteTech RSS",
     feed_url: `${baseUrl}/feed.xml`,
     site_url: baseUrl,
     image_url: `${baseUrl}/logo.png`,
-    copyright: `All rights reserved ${new Date().getFullYear()}, TechFinds`,
+    copyright: `All rights reserved ${new Date().getFullYear()}, iWriteTech`,
     language: "en-US",
     pubDate: new Date().toUTCString(),
     ttl: 60,

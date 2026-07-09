@@ -49,7 +49,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link href="/" className="font-heading font-bold text-2xl tracking-tight">
-            TechFinds
+            iWriteTech
           </Link>
 
           {/* Desktop Nav */}
@@ -93,7 +93,7 @@ export function Navbar() {
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex flex-col gap-6 py-6">
                   <Link href="/" className="font-heading font-bold text-2xl">
-                    TechFinds
+                    iWriteTech
                   </Link>
                   <nav className="flex flex-col gap-4">
                     {navLinks.map((link) => (

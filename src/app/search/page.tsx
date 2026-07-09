@@ -3,8 +3,8 @@ import { getAllPosts } from "@/lib/posts";
 import { SearchClient } from "@/components/blog/SearchClient";
 
 export const metadata: Metadata = {
-  title: "Search | TechFinds",
-  description: "Search across all TechFinds articles, reviews, and guides.",
+  title: "Search | iWriteTech",
+  description: "Search across all iWriteTech articles, reviews, and guides.",
 };
 
 export default function SearchPage() {

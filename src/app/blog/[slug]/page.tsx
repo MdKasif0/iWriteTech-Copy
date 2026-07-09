@@ -13,6 +13,8 @@ import { MDXComponents } from "@/components/content/MDXComponents";
 import { AuthorCard } from "@/components/blog/AuthorCard";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://iwritetech.com";
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -23,24 +25,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!postData) {
     return {
-      title: "Article Not Found | TechFinds",
+      title: "Article Not Found | iWriteTech",
     };
   }
 
   const { meta } = postData;
 
-  const ogImageUrl = meta.ogImage || `https://techfinds.com/api/og?title=${encodeURIComponent(meta.seoTitle || meta.title)}&category=${encodeURIComponent(meta.category)}`;
+  const ogImageUrl = meta.ogImage || `${baseUrl}/api/og?title=${encodeURIComponent(meta.seoTitle || meta.title)}&category=${encodeURIComponent(meta.category)}`;
 
   return {
-    title: `${meta.seoTitle} | TechFinds`,
+    title: `${meta.seoTitle} | iWriteTech`,
     description: meta.seoDescription,
     openGraph: {
-      title: `${meta.seoTitle} | TechFinds`,
+      title: `${meta.seoTitle} | iWriteTech`,
       description: meta.seoDescription,
       type: "article",
       publishedTime: meta.date,
       authors: [meta.author],
-      url: `https://techfinds.com/blog/${meta.slug}`,
+      url: `${baseUrl}/blog/${meta.slug}`,
       images: [
         {
           url: ogImageUrl,
@@ -51,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ],
     },
     alternates: {
-      canonical: `https://techfinds.com/blog/${meta.slug}`,
+      canonical: `${baseUrl}/blog/${meta.slug}`,
     },
   };
 }
@@ -92,25 +94,25 @@ export default async function BlogPostPage({ params }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://techfinds.com"
+        item: baseUrl
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blog",
-        item: "https://techfinds.com/blog"
+        item: `${baseUrl}/blog`
       },
       {
         "@type": "ListItem",
         position: 3,
         name: meta.category,
-        item: `https://techfinds.com/categories/${categorySlug}`
+        item: `${baseUrl}/categories/${categorySlug}`
       },
       {
         "@type": "ListItem",
         position: 4,
         name: meta.title,
-        item: `https://techfinds.com/blog/${meta.slug}`
+        item: `${baseUrl}/blog/${meta.slug}`
       }
     ]
   };
@@ -129,15 +131,15 @@ export default async function BlogPostPage({ params }: Props) {
     },
     publisher: {
       "@type": "Organization",
-      name: "TechFinds",
+      name: "iWriteTech",
       logo: {
         "@type": "ImageObject",
-        url: "https://techfinds.com/logo.png"
+        url: `${baseUrl}/logo.png`
       }
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://techfinds.com/blog/${meta.slug}`
+      "@id": `${baseUrl}/blog/${meta.slug}`
     }
   };
 

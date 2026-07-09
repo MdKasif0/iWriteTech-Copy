@@ -7,6 +7,8 @@ import { CATEGORIES_CONFIG } from "@/lib/categories";
 import { getAllPosts } from "@/lib/posts";
 import { Badge } from "@/components/ui/badge";
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://iwritetech.com";
+
 interface Props {
   params: Promise<{
     slug: string;
@@ -27,21 +29,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!category) {
     return {
-      title: "Category Not Found | TechFinds",
+      title: "Category Not Found | iWriteTech",
     };
   }
 
   return {
-    title: `${category.seoTitle} | TechFinds`,
+    title: `${category.seoTitle} | iWriteTech`,
     description: category.description,
     openGraph: {
-      title: `${category.seoTitle} | TechFinds`,
+      title: `${category.seoTitle} | iWriteTech`,
       description: category.description,
       type: "website",
-      url: `https://techfinds.com/categories/${category.slug}`,
+      url: `${baseUrl}/categories/${category.slug}`,
     },
     alternates: {
-      canonical: `https://techfinds.com/categories/${category.slug}`,
+      canonical: `${baseUrl}/categories/${category.slug}`,
     },
   };
 }
@@ -68,19 +70,19 @@ export default async function CategoryPage({ params }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://techfinds.com"
+        item: baseUrl
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Categories",
-        item: "https://techfinds.com/categories"
+        item: `${baseUrl}/categories`
       },
       {
         "@type": "ListItem",
         position: 3,
         name: category.name,
-        item: `https://techfinds.com/categories/${category.slug}`
+        item: `${baseUrl}/categories/${category.slug}`
       }
     ]
   };

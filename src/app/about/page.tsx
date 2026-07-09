@@ -4,8 +4,8 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us | TechFinds",
-  description: "Learn about the TechFinds mission and the team behind the curated tech and aesthetic desk setups.",
+  title: "About Us | iWriteTech",
+  description: "Learn about the iWriteTech mission and the team behind the curated tech and aesthetic desk setups.",
   alternates: {
     canonical: "/about",
   },
@@ -28,7 +28,7 @@ export default function AboutPage() {
           </h1>
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
-              TechFinds was born from a simple frustration: the tech review space is overwhelmingly focused on raw specs, gaming aesthetics, and benchmarks. But for modern professionals, creators, and minimalists, how a piece of technology looks and feels on a desk is just as important as how fast its processor is.
+              iWriteTech was born from a simple frustration: the tech review space is overwhelmingly focused on raw specs, gaming aesthetics, and benchmarks. But for modern professionals, creators, and minimalists, how a piece of technology looks and feels on a desk is just as important as how fast its processor is.
             </p>
             <p>
               We believe that your workspace should be a sanctuary of productivity and inspiration. Every keyboard, monitor arm, and desk mat we feature has been tested not just for performance, but for its contribution to a beautiful, focused environment.

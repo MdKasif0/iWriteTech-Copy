@@ -3,9 +3,9 @@ import { getAllPosts, getFeaturedPosts } from "@/lib/posts";
 import { BlogListingClient } from "@/components/blog/BlogListingClient";
 
 export const metadata: Metadata = {
-  title: "Blog | TechFinds",
+  title: "Blog | iWriteTech",
   description:
-    "Browse all TechFinds articles — curated reviews, buying guides, and deep dives into the best aesthetic tech for your workspace.",
+    "Browse all iWriteTech articles — curated reviews, buying guides, and deep dives into the best aesthetic tech for your workspace.",
 };
 
 export default function BlogIndexPage() {

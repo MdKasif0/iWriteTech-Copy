@@ -4,7 +4,7 @@ import { ChevronRight, FileText } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
-  title: "Tech Reviews | TechFinds",
+  title: "Tech Reviews | iWriteTech",
   description: "In-depth, hands-on reviews of aesthetic tech gadgets, desk accessories, and productivity tools.",
 };
 

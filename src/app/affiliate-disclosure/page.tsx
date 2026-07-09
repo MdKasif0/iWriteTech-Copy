@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Info } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Affiliate Disclosure | TechFinds",
-  description: "Information about how TechFinds is funded through affiliate partnerships.",
+  title: "Affiliate Disclosure | iWriteTech",
+  description: "Information about how iWriteTech is funded through affiliate partnerships.",
   alternates: {
     canonical: "/affiliate-disclosure",
   },
@@ -29,7 +29,7 @@ export default function AffiliateDisclosurePage() {
         <div>
           <h2 className="font-semibold text-lg text-blue-700 dark:text-blue-300 mb-2">The short version</h2>
           <p className="text-foreground/80 leading-relaxed">
-            TechFinds is reader-supported. Some links on this Site are affiliate links — if you click one and make a purchase, we may earn a small commission, at no extra cost to you. This never affects the price you pay, and it never affects which products we choose to feature or how we rate them.
+            iWriteTech is reader-supported. Some links on this Site are affiliate links — if you click one and make a purchase, we may earn a small commission, at no extra cost to you. This never affects the price you pay, and it never affects which products we choose to feature or how we rate them.
           </p>
         </div>
       </div>
@@ -42,7 +42,7 @@ export default function AffiliateDisclosurePage() {
               In accordance with the Federal Trade Commission&apos;s guidelines concerning the use of endorsements and testimonials in advertising, please assume the following about links and posts on this Site:
             </p>
             <p>
-              Any/all of the links on TechFinds are affiliate links for which we may receive a small commission from purchases you make, at no additional cost to you. <strong>As an Amazon Associate, we earn from qualifying purchases.</strong> We are a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.
+              Any/all of the links on iWriteTech are affiliate links for which we may receive a small commission from purchases you make, at no additional cost to you. <strong>As an Amazon Associate, we earn from qualifying purchases.</strong> We are a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.
             </p>
             <p>
               We may also participate in other affiliate programs (individual retailers, brands, or affiliate networks) as the Site grows. Any such relationships will be covered by this same disclosure.
@@ -54,10 +54,10 @@ export default function AffiliateDisclosurePage() {
           <h2 className="heading mb-6">How this works, in practice</h2>
           <div className="text-lg text-foreground/80 leading-relaxed space-y-6">
             <ul className="list-disc list-outside pl-6 space-y-3 marker:text-primary">
-              <li>When a product mentioned on TechFinds has an affiliate link, clicking it takes you to the retailer&apos;s site with a tracking code attached.</li>
+              <li>When a product mentioned on iWriteTech has an affiliate link, clicking it takes you to the retailer&apos;s site with a tracking code attached.</li>
               <li>If you make a qualifying purchase during that visit (not necessarily the exact product you clicked through on), we earn a commission.</li>
               <li>The price you pay is exactly the same whether you use our link or go directly to the retailer.</li>
-              <li>Not every link on TechFinds is an affiliate link — some are simply for reference.</li>
+              <li>Not every link on iWriteTech is an affiliate link — some are simply for reference.</li>
             </ul>
           </div>
         </section>
@@ -81,7 +81,7 @@ export default function AffiliateDisclosurePage() {
           <h2 className="heading mb-6">Sponsored content (future)</h2>
           <div className="text-lg text-foreground/80 leading-relaxed space-y-6">
             <p>
-              If TechFinds publishes sponsored posts or paid partnerships in the future, those will be clearly and separately labeled as &quot;Sponsored&quot; or &quot;In partnership with [Brand]&quot; at the top of the article, in addition to this general disclosure.
+              If iWriteTech publishes sponsored posts or paid partnerships in the future, those will be clearly and separately labeled as &quot;Sponsored&quot; or &quot;In partnership with [Brand]&quot; at the top of the article, in addition to this general disclosure.
             </p>
           </div>
         </section>
@@ -90,7 +90,7 @@ export default function AffiliateDisclosurePage() {
           <h2 className="heading mb-6">Questions</h2>
           <div className="text-lg text-foreground/80 leading-relaxed space-y-6">
             <p>
-              If you have any questions about our affiliate relationships or this disclosure, contact us at [hello@techfinds.com].
+              If you have any questions about our affiliate relationships or this disclosure, contact us at [hello@iwritetech.com].
             </p>
             <p>
               This disclosure is provided in the interest of transparency and in compliance with the FTC&apos;s 16 CFR Part 255: <em>Guides Concerning the Use of Endorsements and Testimonials in Advertising.</em>
