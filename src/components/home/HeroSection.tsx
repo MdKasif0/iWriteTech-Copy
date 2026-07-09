@@ -59,8 +59,8 @@ export function HeroSection() {
                 <span className="ml-1.5">Hands-On Tested</span>
               </div>
               <div>
-                <span className="mono-data text-foreground">0</span>
-                <span className="ml-1.5">Sponsored Picks</span>
+                <span className="mono-data text-foreground">100%</span>
+                <span className="ml-1.5">Editorially Independent</span>
               </div>
             </div>
           </div>
