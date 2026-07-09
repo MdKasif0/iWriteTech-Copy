@@ -20,7 +20,7 @@ export function FeaturedArticlesSection({ posts }: FeaturedArticlesSectionProps)
   return (
     <section
       ref={sectionRef}
-      className={`py-[120px] transition-all duration-700 ease-out ${
+      className={`py-16 md:py-24 transition-all duration-700 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
     >

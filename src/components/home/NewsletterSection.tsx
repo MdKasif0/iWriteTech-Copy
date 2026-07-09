@@ -10,7 +10,7 @@ export function NewsletterSection() {
   return (
     <section
       ref={sectionRef}
-      className={`py-[140px] px-4 md:px-6 transition-all duration-700 ease-out ${
+      className={`py-16 md:py-24 px-4 md:px-6 transition-all duration-700 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
     >

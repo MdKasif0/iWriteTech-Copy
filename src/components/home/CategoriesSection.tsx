@@ -14,7 +14,7 @@ export function CategoriesSection() {
   return (
     <section
       ref={sectionRef}
-      className={`relative py-[140px] transition-all duration-700 ease-out ${
+      className={`relative py-16 md:py-24 transition-all duration-700 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
     >

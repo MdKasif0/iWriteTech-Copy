@@ -333,7 +333,7 @@ export function CinematicFooter() {
               ref={headingRef}
               className="text-5xl md:text-8xl font-black footer-text-glow tracking-tighter mb-12 text-center"
             >
-              Ready to upgrade?
+              Ready to Explore?
             </h2>
 
             {/* Interactive Magnetic Pills Layout */}
