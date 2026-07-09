@@ -12,7 +12,7 @@ export function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className={`relative py-20 md:py-28 lg:py-36 transition-all duration-700 ease-out ${
+      className={`relative py-12 md:py-16 lg:py-24 transition-all duration-700 ease-out ${
         heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
     >
@@ -79,10 +79,10 @@ export function HeroSection() {
               </div>
 
               {/* Image area */}
-              <div className="relative mx-6 aspect-[4/3] rounded-lg bg-muted overflow-hidden">
+              <div className="relative mx-6 aspect-[4/3] md:aspect-[4/5] rounded-lg bg-muted overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1200&auto=format&fit=crop"
-                  alt="Minimalist Desk Setup"
+                  src="/images/hero-setup.png"
+                  alt="Minimalist desk setup with matte black mechanical keyboard and walnut desk surface"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
