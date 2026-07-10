@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="120" fill="#FBF7F1" />
+  
+  <g stroke="#B99249" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+    <!-- "I" (Shifted left to add space) -->
+    <line x1="114" y1="150" x2="210" y2="150" />
+    <line x1="114" y1="362" x2="210" y2="362" />
+    <line x1="162" y1="150" x2="162" y2="362" />
+    
+    <!-- ">" (Shifted right to add space) -->
+    <polyline points="288,158 424,256 288,354" fill="none" />
+    <circle cx="288" cy="158" r="12" fill="#FBF7F1" />
+    <circle cx="424" cy="256" r="12" fill="#FBF7F1" />
+    <circle cx="288" cy="354" r="12" fill="#FBF7F1" />
+  </g>
+</svg>

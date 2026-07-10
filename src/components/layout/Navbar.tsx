@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Search, Menu } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
@@ -48,8 +49,9 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-8">
-          <Link href="/" className="font-heading font-bold text-2xl tracking-tight">
-            iWriteTech
+          <Link href="/" className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight">
+            <Image src="/logo.svg" alt="iWriteTech Logo" width={36} height={36} className="object-contain" priority />
+            <span className="hidden sm:inline-block">iWriteTech</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -92,7 +94,8 @@ export function Navbar() {
               <SheetContent side="left" className="w-[300px] sm:w-[400px]">
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex flex-col gap-6 py-6">
-                  <Link href="/" className="font-heading font-bold text-2xl">
+                  <Link href="/" className="flex items-center gap-2 font-heading font-bold text-2xl">
+                    <Image src="/logo.svg" alt="iWriteTech Logo" width={36} height={36} className="object-contain" />
                     iWriteTech
                   </Link>
                   <nav className="flex flex-col gap-4">

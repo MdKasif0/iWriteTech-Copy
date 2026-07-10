@@ -56,6 +56,10 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
   },
+  icons: {
+    icon: "/logo.svg",
+    apple: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
@@ -69,7 +73,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "iWriteTech",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://iwritetech.com",
-    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://iwritetech.com"}/logo.png`,
+    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://iwritetech.com"}/logo.svg`,
     sameAs: [
       "https://twitter.com/iwritetech",
       "https://instagram.com/iwritetech",

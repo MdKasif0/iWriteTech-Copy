@@ -3,6 +3,7 @@
 import * as React from "react";
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BookOpen, Info, ArrowUp } from "lucide-react";
@@ -378,8 +379,10 @@ export function CinematicFooter() {
             <div className="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-border/50">
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">Curated with</span>
               <span className="animate-footer-heartbeat text-sm md:text-base text-destructive">❤</span>
-              <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">by</span>
-              <span className="text-foreground font-black text-xs md:text-sm tracking-normal ml-1">iWriteTech</span>
+              <span className="text-foreground font-black text-xs md:text-sm tracking-normal ml-1 flex items-center gap-1.5">
+                <Image src="/logo.svg" alt="iWriteTech Logo" width={16} height={16} className="object-contain inline-block" />
+                iWriteTech
+              </span>
             </div>
 
             {/* Back to top */}
