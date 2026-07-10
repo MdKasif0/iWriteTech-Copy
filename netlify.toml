@@ -4,3 +4,4 @@
 
 [build.environment]
   COREPACK_ENABLE = "true"
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_GA_ID"
