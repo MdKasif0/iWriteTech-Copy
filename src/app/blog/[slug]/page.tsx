@@ -32,6 +32,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { meta } = postData;
 
   const ogImageUrl = meta.ogImage || `${baseUrl}/api/og?title=${encodeURIComponent(meta.seoTitle || meta.title)}&category=${encodeURIComponent(meta.category)}`;
+  const pinterestImageUrl = meta.pinterestImage || ogImageUrl;
+
+  const ogImages: Array<{ url: string; width: number; height: number; alt: string }> = [
+    {
+      url: ogImageUrl,
+      width: 1200,
+      height: 630,
+      alt: meta.title,
+    },
+  ];
+
+  // Add Pinterest-optimized portrait image if it differs from the standard OG image
+  if (meta.pinterestImage && meta.pinterestImage !== meta.ogImage) {
+    ogImages.push({
+      url: pinterestImageUrl,
+      width: 1000,
+      height: 1500,
+      alt: meta.title,
+    });
+  }
 
   return {
     title: `${meta.seoTitle} | iWriteTech`,
@@ -43,14 +63,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: meta.date,
       authors: [meta.author],
       url: `${baseUrl}/blog/${meta.slug}`,
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: meta.title,
-        },
-      ],
+      images: ogImages,
     },
     alternates: {
       canonical: `${baseUrl}/blog/${meta.slug}`,
@@ -134,7 +147,7 @@ export default async function BlogPostPage({ params }: Props) {
       name: "iWriteTech",
       logo: {
         "@type": "ImageObject",
-        url: `${baseUrl}/logo.png`
+        url: `${baseUrl}/logo.svg`
       }
     },
     mainEntityOfPage: {

@@ -18,6 +18,7 @@ export interface PostMeta {
   seoTitle: string;
   seoDescription: string;
   ogImage: string;
+  pinterestImage: string;
 }
 
 export interface TOCItem {
@@ -30,15 +31,16 @@ const POSTS_DIR = path.join(process.cwd(), "content", "posts");
 
 export const CATEGORIES = [
   "Desk Setups",
-  "MacBook Accessories",
   "Mechanical Keyboards",
+  "MacBook Accessories",
+  "Laptop Accessories",
+  "Phone Accessories",
+  "Study Desk",
+  "Gaming",
   "Productivity",
   "Smart Home",
-  "Audio Gear",
-  "iPad Accessories",
-  "Cables & Hubs",
-  "Gaming",
-  "Tech Components",
+  "Amazon Finds",
+  "Tech Gifts",
 ] as const;
 
 export function extractTableOfContents(markdown: string): TOCItem[] {
@@ -94,6 +96,7 @@ export function getAllPosts(): PostMeta[] {
         seoTitle: (data.seoTitle as string) ?? (data.title as string) ?? "Untitled",
         seoDescription: (data.seoDescription as string) ?? (data.description as string) ?? "",
         ogImage: (data.ogImage as string) ?? (data.featuredImage as string) ?? (data.thumbnail as string) ?? "",
+        pinterestImage: (data.pinterestImage as string) ?? "",
       } satisfies PostMeta;
     })
     .sort(
@@ -132,6 +135,7 @@ export function getPostBySlug(slug: string): { meta: PostMeta; content: string }
     seoTitle: (data.seoTitle as string) ?? (data.title as string) ?? "Untitled",
     seoDescription: (data.seoDescription as string) ?? (data.description as string) ?? "",
     ogImage: (data.ogImage as string) ?? (data.featuredImage as string) ?? (data.thumbnail as string) ?? "",
+    pinterestImage: (data.pinterestImage as string) ?? "",
   };
 
   return { meta, content };
