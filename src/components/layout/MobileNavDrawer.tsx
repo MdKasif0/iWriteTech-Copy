@@ -1,231 +1,264 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { 
-  X, Search, BookOpen, Star, ShoppingCart, 
-  Gift, Info, Bookmark, MessageSquare, Mail
+  X, 
+  Search, 
+  BookOpen, 
+  Star, 
+  ShoppingCart, 
+  Gift, 
+  Info,
+  ChevronRight,
+  Mail,
+  Shield,
+  FileText
 } from "lucide-react";
-import { createPortal } from "react-dom";
-import { ThemeToggle } from "./ThemeToggle";
 
 interface MobileNavDrawerProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export function MobileNavDrawer({ isOpen, onClose }: MobileNavDrawerProps) {
-  const [mounted, setMounted] = useState(false);
-  const drawerRef = useRef<HTMLDivElement>(null);
+// Custom SVGs for Socials to avoid Lucide import issues
+const PinterestIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.163 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.624 0 12.017 0z"/>
+  </svg>
+);
 
-  // Swipe handling
-  const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
+const XTwitterIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+);
+
+export function MobileNavDrawer({ isOpen, onClose }: MobileNavDrawerProps) {
+  const [isMounted, setIsMounted] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchMove, setTouchMove] = useState<number | null>(null);
+  const [drawerOffset, setDrawerOffset] = useState(0);
 
   useEffect(() => {
-    setMounted(true);
-    
-    // Lock body scroll when open
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
+      setDrawerOffset(0);
     }
-
     return () => {
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.targetTouches[0].clientX;
+    setTouchStart(e.targetTouches[0].clientX);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.targetTouches[0].clientX;
+    if (touchStart === null) return;
+    const currentTouch = e.targetTouches[0].clientX;
+    const diff = touchStart - currentTouch;
+    
+    // Only allow swiping left (negative offset)
+    if (diff > 0) {
+      setDrawerOffset(-diff);
+    }
   };
 
   const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return;
+    if (touchStart === null || touchMove === null) return;
     
-    // Calculate distance
-    const distance = touchStartX.current - touchEndX.current;
-    
-    // If swiped left by at least 50px, close
-    if (distance > 50) {
+    // If swiped more than 75px to the left, close the drawer
+    if (drawerOffset < -75) {
       onClose();
+    } else {
+      // Snap back
+      setDrawerOffset(0);
     }
     
-    // Reset
-    touchStartX.current = null;
-    touchEndX.current = null;
+    setTouchStart(null);
+    setTouchMove(null);
   };
 
-  // Only render on client to avoid hydration issues with portals
-  if (!mounted) return null;
+  if (!isMounted) return null;
 
-  const mainLinks = [
-    { name: "Blog", subtitle: "Latest articles & tutorials", href: "/blog", icon: BookOpen },
-    { name: "Reviews", subtitle: "Honest product reviews", href: "/reviews", icon: Star },
-    { name: "Buying Guides", subtitle: "Find the best products", href: "/guides", icon: ShoppingCart },
-    { name: "Amazon Finds", subtitle: "Curated recommendations", href: "/amazon-finds", icon: Gift },
-    { name: "About", subtitle: "Learn about iWriteTech", href: "/about", icon: Info },
+  const navCards = [
+    { name: "Blog", href: "/blog", desc: "Latest articles & tutorials", icon: BookOpen },
+    { name: "Reviews", href: "/reviews", desc: "Honest product reviews", icon: Star },
+    { name: "Buying Guides", href: "/guides", desc: "Find the best products", icon: ShoppingCart },
+    { name: "Amazon Finds", href: "/amazon-finds", desc: "Curated recommendations", icon: Gift },
+    { name: "About", href: "/about", desc: "Learn about iWriteTech", icon: Info },
   ];
 
   const categories = [
-    "Mechanical Keyboards",
-    "Desk Setups",
-    "MacBook Accessories",
-    "Productivity",
-    "Smart Home"
+    { name: "Desk Setups", href: "/categories/desk-setups" },
+    { name: "MacBook Accessories", href: "/categories/macbook-accessories" },
+    { name: "Mechanical Keyboards", href: "/categories/mechanical-keyboards" },
+    { name: "Productivity", href: "/categories/productivity" },
+    { name: "Smart Home", href: "/categories/smart-home" },
   ];
 
-  const overlayClasses = isOpen 
-    ? "opacity-100 pointer-events-auto" 
-    : "opacity-0 pointer-events-none";
-    
-  const drawerClasses = isOpen 
-    ? "translate-x-0" 
-    : "-translate-x-full";
+  const drawerTransform = isOpen 
+    ? `translateX(${drawerOffset < 0 ? drawerOffset : 0}px)` 
+    : "translateX(-100%)";
 
   return createPortal(
-    <div className="fixed inset-0 z-50 lg:hidden">
-      {/* Backdrop */}
+    <div className="fixed inset-0 z-50 lg:hidden pointer-events-none">
+      {/* Overlay */}
       <div 
-        className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${overlayClasses}`}
+        className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0"
+        }`}
         onClick={onClose}
-        aria-hidden="true"
       />
 
       {/* Drawer */}
-      <div
-        ref={drawerRef}
-        className={`absolute top-0 left-0 bottom-0 w-[85vw] max-w-[400px] bg-[#121212] text-[#F2EEE6] rounded-r-[20px] shadow-2xl flex flex-col overflow-hidden nav-drawer-spring transition-transform duration-500 ease-out dark ${drawerClasses}`}
+      <div 
+        className="absolute top-0 left-0 h-full w-[85%] max-w-[400px] bg-[#121212]/95 backdrop-blur-xl border-r border-white/10 rounded-tr-[20px] rounded-br-[20px] shadow-2xl flex flex-col pointer-events-auto"
+        style={{
+          transform: drawerTransform,
+          transition: touchStart !== null ? "none" : "transform 0.5s cubic-bezier(0.32,0.72,0,1)",
+        }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Navigation Menu"
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 pb-4 border-b border-white/10 shrink-0">
-          <Link href="/" onClick={onClose} className="flex items-center gap-3 group">
-            <div className="bg-white p-1 rounded-lg">
-              <Image src="/logo.svg" alt="iWriteTech Logo" width={28} height={28} className="object-contain" />
-            </div>
-            <div>
-              <div className="font-heading font-bold text-xl tracking-tight leading-none text-white">iWriteTech</div>
-              <div className="text-[11px] text-white/50 uppercase tracking-wider font-medium mt-1">Tech Reviews • Buying Guides</div>
+        <div className="flex items-center justify-between p-6 border-b border-white/10 shrink-0">
+          <Link href="/" className="flex items-center gap-3" onClick={onClose}>
+            <Image src="/logo.svg" alt="iWriteTech Logo" width={32} height={32} className="object-contain" />
+            <div className="flex flex-col">
+              <span className="font-heading font-bold text-lg text-white leading-none">iWriteTech</span>
+              <span className="text-[11px] font-medium text-zinc-400 mt-1 uppercase tracking-wider">Tech Reviews • Buying Guides</span>
             </div>
           </Link>
           <button 
             onClick={onClose}
-            className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 transition-colors active:scale-90 touch-manipulation"
             aria-label="Close menu"
           >
-            <X className="w-5 h-5 text-white/70" />
+            <X size={20} />
           </button>
         </div>
 
         {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto overflow-x-hidden p-6 flex flex-col gap-8 overscroll-contain">
+        <div className="flex-1 overflow-y-auto overscroll-contain pb-8 px-6 pt-6 no-scrollbar">
           
-          {/* Main Links */}
-          <nav className="flex flex-col gap-3">
-            {mainLinks.map((link, i) => {
-              const Icon = link.icon;
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={onClose}
-                  className={`stagger-item group flex items-center justify-between p-3 rounded-[14px] border border-white/5 bg-white/[0.02] hover:bg-white/[0.06] hover:scale-[1.02] hover:border-white/10 transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20`}
-                  style={{ animationDelay: `${isOpen ? i * 50 : 0}ms` }}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/70 group-hover:text-white group-hover:bg-white/10 transition-colors">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="text-[15px] font-medium text-white/90 group-hover:text-white transition-colors">
-                        {link.name}
-                      </div>
-                      <div className="text-[13px] text-white/40 group-hover:text-white/60 transition-colors">
-                        {link.subtitle}
-                      </div>
-                    </div>
+          {/* Main Nav Cards */}
+          <nav className="flex flex-col gap-3 mb-8">
+            {navCards.map((link, i) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={onClose}
+                className="group flex items-center justify-between p-4 rounded-[16px] bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/15 transition-all duration-300 active:scale-[0.98] touch-manipulation"
+                style={{
+                  opacity: isOpen ? 1 : 0,
+                  transform: isOpen ? "translateY(0)" : "translateY(10px)",
+                  transition: `opacity 0.4s ease forwards ${0.1 + (i * 0.05)}s, transform 0.4s cubic-bezier(0.32,0.72,0,1) forwards ${0.1 + (i * 0.05)}s, background 0.2s, border 0.2s, transform 0.1s`
+                }}
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-300 group-hover:text-white group-hover:bg-white/10 transition-colors">
+                    <link.icon size={20} strokeWidth={1.5} />
                   </div>
-                  <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors mr-1">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/40 group-hover:text-white transition-colors"/>
-                    </svg>
+                  <div className="flex flex-col">
+                    <span className="text-white font-medium text-base">{link.name}</span>
+                    <span className="text-zinc-500 text-xs mt-0.5">{link.desc}</span>
                   </div>
-                </Link>
-              );
-            })}
+                </div>
+                <ChevronRight size={18} className="text-zinc-600 group-hover:text-zinc-400 transition-colors" />
+              </Link>
+            ))}
           </nav>
 
-          {/* Categories */}
-          <div className="flex flex-col gap-4">
-            <h4 className={`stagger-item text-xs font-semibold text-white/40 uppercase tracking-widest pl-1`} style={{ animationDelay: `${isOpen ? 250 : 0}ms` }}>
-              Categories
-            </h4>
+          {/* Categories Pills */}
+          <div className="mb-8"
+            style={{
+              opacity: isOpen ? 1 : 0,
+              transform: isOpen ? "translateY(0)" : "translateY(10px)",
+              transition: `opacity 0.4s ease forwards 0.4s, transform 0.4s cubic-bezier(0.32,0.72,0,1) forwards 0.4s`
+            }}
+          >
+            <h4 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4">Categories</h4>
             <div className="flex flex-wrap gap-2">
-              {categories.map((cat, i) => {
-                const slug = cat.toLowerCase().replace(/ /g, '-');
-                return (
-                  <Link
-                    key={cat}
-                    href={`/categories/${slug}`}
-                    onClick={onClose}
-                    className={`stagger-item px-4 py-2.5 rounded-full border border-white/10 bg-white/5 text-sm text-white/70 hover:bg-white/10 hover:text-white hover:border-white/20 transition-colors active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20`}
-                    style={{ animationDelay: `${isOpen ? 300 + (i * 30) : 0}ms` }}
-                  >
-                    {cat}
-                  </Link>
-                );
-              })}
+              {categories.map((cat) => (
+                <Link
+                  key={cat.name}
+                  href={cat.href}
+                  onClick={onClose}
+                  className="px-4 py-2.5 rounded-full bg-white/5 border border-white/5 text-sm text-zinc-300 hover:text-white hover:bg-white/10 hover:border-white/15 transition-all duration-200 active:scale-95 touch-manipulation"
+                >
+                  {cat.name}
+                </Link>
+              ))}
             </div>
           </div>
-        </div>
 
-        {/* Footer Section */}
-        <div className={`stagger-item p-6 border-t border-white/10 bg-white/[0.01] shrink-0`} style={{ animationDelay: `${isOpen ? 450 : 0}ms` }}>
-          <div className="flex items-center gap-3 mb-6">
+          {/* Bottom Section */}
+          <div className="pt-6 border-t border-white/10 flex flex-col gap-4"
+            style={{
+              opacity: isOpen ? 1 : 0,
+              transform: isOpen ? "translateY(0)" : "translateY(10px)",
+              transition: `opacity 0.4s ease forwards 0.5s, transform 0.4s cubic-bezier(0.32,0.72,0,1) forwards 0.5s`
+            }}
+          >
             <Link 
               href="/search" 
               onClick={onClose}
-              className="flex-1 flex items-center justify-center gap-2 h-11 rounded-xl bg-white/10 hover:bg-white/15 text-white transition-colors active:scale-[0.98] font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+              className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-zinc-400 hover:text-white transition-colors"
             >
-              <Search className="w-4 h-4" />
-              <span>Search iWriteTech</span>
+              <Search size={18} />
+              <span className="text-sm font-medium">Search Articles</span>
             </Link>
-            {/* Keeping the ThemeToggle for aesthetic if needed, though they want it dark. I'll include it for functional completeness but hide it if they strictly want dark. Actually, Navbar handles theme toggle outside. */}
-          </div>
-          
-          <div className="flex items-center justify-between text-white/50 text-[13px]">
-            <div className="flex items-center gap-4">
-              <Link href="#" className="hover:text-white transition-colors" aria-label="Pinterest">
-                <Bookmark className="w-5 h-5" />
+
+            <Link 
+              href="#" 
+              onClick={onClose}
+              className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-zinc-400 hover:text-white transition-colors"
+            >
+              <Mail size={18} />
+              <span className="text-sm font-medium">Newsletter</span>
+            </Link>
+            
+            <div className="flex items-center gap-2 px-3 py-2">
+              <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 transition-colors">
+                <PinterestIcon />
               </Link>
-              <Link href="#" className="hover:text-white transition-colors" aria-label="Twitter">
-                <MessageSquare className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="hover:text-white transition-colors" aria-label="Newsletter">
-                <Mail className="w-5 h-5" />
+              <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 transition-colors">
+                <XTwitterIcon />
               </Link>
             </div>
-            <div className="flex items-center gap-3">
-              <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-              <span>•</span>
-              <Link href="/disclosure" className="hover:text-white transition-colors">Affiliate</Link>
+
+            <div className="flex items-center gap-4 px-3 mt-4">
+              <Link href="/privacy" onClick={onClose} className="flex items-center gap-1.5 text-xs text-zinc-600 hover:text-zinc-400 transition-colors">
+                <Shield size={14} /> Privacy
+              </Link>
+              <Link href="/affiliate" onClick={onClose} className="flex items-center gap-1.5 text-xs text-zinc-600 hover:text-zinc-400 transition-colors">
+                <FileText size={14} /> Affiliate
+              </Link>
             </div>
           </div>
         </div>
-
       </div>
+      
+      <style dangerouslySetInnerHTML={{__html: `
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}} />
     </div>,
     document.body
   );
