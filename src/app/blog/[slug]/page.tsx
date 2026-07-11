@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 import { Link as LinkIcon, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -290,6 +291,7 @@ export default async function BlogPostPage({ params }: Props) {
                 components={MDXComponents}
                 options={{
                   mdxOptions: {
+                    remarkPlugins: [remarkGfm],
                     rehypePlugins: [rehypeSlug], // Auto-generates IDs for headings
                   },
                 }}

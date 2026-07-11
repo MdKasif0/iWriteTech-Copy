@@ -1,11 +1,16 @@
 import { Check, X } from "lucide-react";
 
 interface ProsConsBoxProps {
-  pros: string[];
-  cons: string[];
+  pros?: string[] | string;
+  cons?: string[] | string;
 }
 
 export function ProsConsBox({ pros = [], cons = [] }: ProsConsBoxProps) {
+  // next-mdx-remote sometimes fails to parse JSX array expressions and falls back to default empty array.
+  // By allowing pipe-separated strings, we bypass the issue entirely.
+  const prosList = typeof pros === 'string' ? pros.split('|').map(s => s.trim()).filter(Boolean) : pros;
+  const consList = typeof cons === 'string' ? cons.split('|').map(s => s.trim()).filter(Boolean) : cons;
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8">
       <div className="bg-card border border-border rounded-xl p-5 md:p-6">
@@ -16,7 +21,7 @@ export function ProsConsBox({ pros = [], cons = [] }: ProsConsBoxProps) {
           Reasons to Buy
         </h4>
         <ul className="space-y-3">
-          {pros.map((pro, i) => (
+          {prosList.map((pro, i) => (
             <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500/50 mt-1.5 shrink-0" />
               <span>{pro}</span>
@@ -33,7 +38,7 @@ export function ProsConsBox({ pros = [], cons = [] }: ProsConsBoxProps) {
           Reasons to Avoid
         </h4>
         <ul className="space-y-3">
-          {cons.map((con, i) => (
+          {consList.map((con, i) => (
             <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
               <span className="w-1.5 h-1.5 rounded-full bg-red-500/50 mt-1.5 shrink-0" />
               <span>{con}</span>
