@@ -360,6 +360,9 @@ export function CinematicFooter() {
                 <MagneticButton as="a" href="/affiliate-disclosure" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground">
                   Affiliate Disclosure
                 </MagneticButton>
+                <MagneticButton as="a" href="/terms" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground">
+                  Terms & Conditions
+                </MagneticButton>
                 <MagneticButton as="a" href="/contact" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground">
                   Contact Us
                 </MagneticButton>
