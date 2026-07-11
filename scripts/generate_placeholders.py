@@ -2,11 +2,12 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 
 paths = [
-    "public/images/posts/best-desk-mats-2026/hero.png",
-    "public/images/posts/best-desk-mats-2026/pinterest.png",
-    "public/images/posts/best-desk-mats-2026/orbitkey.png",
-    "public/images/posts/best-desk-mats-2026/graf-lantz-felt.png",
-    "public/images/posts/best-desk-mats-2026/k-knodel.png",
+    "public/images/posts/best-laptop-stands-macbook-2026/hero.png",
+    "public/images/posts/best-laptop-stands-macbook-2026/pinterest.png",
+    "public/images/posts/best-laptop-stands-macbook-2026/rain-design-mstand.png",
+    "public/images/posts/best-laptop-stands-macbook-2026/twelve-south-curve-se.png",
+    "public/images/posts/best-laptop-stands-macbook-2026/besign-ls03.png",
+    "public/images/posts/best-laptop-stands-macbook-2026/walnut-stand.png",
 ]
 
 for path in paths:
