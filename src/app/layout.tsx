@@ -60,6 +60,9 @@ export const metadata: Metadata = {
     icon: "/logo.svg",
     apple: "/logo.svg",
   },
+  other: {
+    "google-adsense-account": "ca-pub-6238466387091690",
+  },
 };
 
 export default function RootLayout({
@@ -92,18 +95,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6238466387091690" crossOrigin="anonymous"></script>
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {/* Google Analytics */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || "G-XJQM0C7P9V"}`}
-          strategy="afterInteractive"
-        />
-        {/* Google AdSense */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6238466387091690"
-          crossOrigin="anonymous"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
