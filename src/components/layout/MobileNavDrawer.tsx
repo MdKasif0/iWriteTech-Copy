@@ -133,12 +133,15 @@ export function MobileNavDrawer({ isOpen, onClose }: MobileNavDrawerProps) {
       >
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-white/10 shrink-0">
-          <Link href="/" className="flex items-center gap-3" onClick={onClose}>
-            <Image src="/logo.svg" alt="iWriteTech Logo" width={32} height={32} className="object-contain" />
-            <div className="flex flex-col">
-              <span className="font-heading font-bold text-lg text-white leading-none">iWriteTech</span>
-              <span className="text-[11px] font-medium text-zinc-400 mt-1 uppercase tracking-wider">Tech Reviews • Buying Guides</span>
+          <Link href="/" className="flex flex-col gap-1" onClick={onClose}>
+            <div className="flex items-center font-heading font-medium text-[26px] tracking-tight hover:opacity-90 transition-opacity">
+              <span className="relative inline-flex items-center justify-center">
+                <span className="absolute top-[0.2em] w-[0.2em] h-[0.2em] bg-[#cda962] rounded-full" />
+                <span className="text-white">ı</span>
+              </span>
+              <span className="text-white">WriteTech</span>
             </div>
+            <span className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider">Tech Reviews • Buying Guides</span>
           </Link>
           <button 
             onClick={onClose}

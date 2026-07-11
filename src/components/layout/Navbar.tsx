@@ -45,9 +45,12 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-8">
-          <Link href="/" className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight">
-            <Image src="/logo.svg" alt="iWriteTech Logo" width={36} height={36} className="object-contain" priority />
-            <span className="hidden sm:inline-block">iWriteTech</span>
+          <Link href="/" className="flex items-center font-heading font-medium text-[28px] tracking-tight hover:opacity-90 transition-opacity">
+            <span className="relative inline-flex items-center justify-center">
+              <span className="absolute top-[0.2em] w-[0.2em] h-[0.2em] bg-[#cda962] rounded-full" />
+              ı
+            </span>
+            <span>WriteTech</span>
           </Link>
 
           {/* Desktop Nav */}
