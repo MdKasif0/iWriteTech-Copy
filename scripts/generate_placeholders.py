@@ -2,9 +2,11 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 
 paths = [
-    "public/images/posts/best-macropads-2026/hero.png",
-    "public/images/posts/best-macropads-2026/pinterest.png",
-    "public/images/posts/best-macropads-2026/elgato-stream-deck-mini.png",
+    "public/images/posts/best-standing-desk-converters-2026/hero.png",
+    "public/images/posts/best-standing-desk-converters-2026/pinterest.png",
+    "public/images/posts/best-standing-desk-converters-2026/varidesk-pro-plus-36.png",
+    "public/images/posts/best-standing-desk-converters-2026/vivo-k-series.png",
+    "public/images/posts/best-standing-desk-converters-2026/changedesk-mini.png",
 ]
 
 for path in paths:
