@@ -181,3 +181,25 @@
   font-weight: 500;
   letter-spacing: 0.02em;
 }
+
+/* Mobile Navigation Custom Animations */
+.nav-drawer-spring {
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+
+.stagger-item {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

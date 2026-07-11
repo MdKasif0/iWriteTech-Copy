@@ -12,10 +12,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import { MobileNavDrawer } from "./MobileNavDrawer";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -86,46 +87,18 @@ export function Navbar() {
 
           {/* Mobile Nav */}
           <div className="lg:hidden">
-            <Sheet>
-              <SheetTrigger className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 w-9">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle menu</span>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                <div className="flex flex-col gap-6 py-6">
-                  <Link href="/" className="flex items-center gap-2 font-heading font-bold text-2xl">
-                    <Image src="/logo.svg" alt="iWriteTech Logo" width={36} height={36} className="object-contain" />
-                    iWriteTech
-                  </Link>
-                  <nav className="flex flex-col gap-4">
-                    {navLinks.map((link) => (
-                      <Link
-                        key={link.name}
-                        href={link.href}
-                        className="text-lg font-medium hover:text-primary"
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
-                    <div className="pt-4 border-t border-border">
-                      <h4 className="text-sm font-semibold text-muted-foreground mb-3">Categories</h4>
-                      <div className="flex flex-col gap-3">
-                        {categories.map((cat) => (
-                          <Link
-                            key={cat.name}
-                            href={cat.href}
-                            className="text-base hover:text-primary"
-                          >
-                            {cat.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </nav>
-                </div>
-              </SheetContent>
-            </Sheet>
+            <button
+              onClick={() => setIsMobileNavOpen(true)}
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 w-9"
+              aria-expanded={isMobileNavOpen}
+              aria-label="Toggle menu"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+            <MobileNavDrawer 
+              isOpen={isMobileNavOpen} 
+              onClose={() => setIsMobileNavOpen(false)} 
+            />
           </div>
         </div>
       </div>
