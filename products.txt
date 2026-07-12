@@ -1,0 +1,357 @@
+
+
+=== PASTE EVERYTHING BELOW THIS LINE BACK TO CLAUDE ===
+
+[
+  {
+    "asin": "B0CBWJ9SKX",
+    "name": "Keychron C3 Pro",
+    "title": "Keychron C3 Pro QMK/VIA Gasket Mount Gaming Keyboard, TKL Layout 87 Keys Wired Mechanical Keyboard for Mac/Windows/Linux Brown Switch",
+    "price_value": 8715.56,
+    "currency": "INR",
+    "rating": 4.4,
+    "ratings_total": 596,
+    "main_image": "https://m.media-amazon.com/images/I/6125ZxZI9gL.jpg",
+    "availability": null
+  },
+  {
+    "asin": "B0D3GZYN1P",
+    "name": "RK ROYAL KLUDGE R75 Wireless",
+    "title": "RK ROYAL KLUDGE R75 Wireless Mechanical Keyboard, 75% Percent Custom Gaming Keyboard Gasket Mount RGB Backlit with Knob & PBT Keycaps, BT5.1/2.4GHz/USB-C, Hot Swappable Cream Switch Blue Hot Swappable Creamm Switch",
+    "price_value": 7899,
+    "currency": "INR",
+    "rating": 4.4,
+    "ratings_total": 627,
+    "main_image": "https://m.media-amazon.com/images/I/61k39IyVFiL.jpg",
+    "availability": "In stock"
+  },
+  {
+    "asin": "B0FZMMNZ95",
+    "name": "Logitech MX Mechanical",
+    "title": "Logitech MX Mechanical Full-Size Wireless Mechanical Keyboard, Tactile Quiet Switches, Low Profile Backlit Keys, Bluetooth, USB-C, Multi-Device Performance, Windows/macOS Graphite, Bulk Packaging",
+    "price_value": 35994,
+    "currency": "INR",
+    "rating": 5,
+    "ratings_total": 2,
+    "main_image": "https://m.media-amazon.com/images/I/51SaAGOz-OL.jpg",
+    "availability": null
+  },
+  {
+    "asin": "B06XRVX3XM",
+    "name": "Satechi USB-C Pro Hub",
+    "title": "Satechi Type-C Pro Hub Adapter with USB-C PD (40 Gbps), 4K HDMI, USB-C Data, SD/Micro Card Reader, USB Port 3.0 - for M2/ M1 MacBook Pro/Air (Space Gray)",
+    "price_value": 9199.73,
+    "currency": "INR",
+    "rating": 4,
+    "ratings_total": 2429,
+    "main_image": "https://m.media-amazon.com/images/I/51l5DOtL5QL.jpg",
+    "availability": "In stock"
+  },
+  {
+    "asin": "B01F01DRW6",
+    "name": "Rain Design mStand",
+    "title": "Rain Design m-Stand Tabletop Laptop Stand, Space Gray (Patented)",
+    "price_value": 8014,
+    "currency": "INR",
+    "rating": 4.8,
+    "ratings_total": 3259,
+    "main_image": "https://m.media-amazon.com/images/I/61fiRagpihL.jpg",
+    "availability": null
+  },
+  {
+    "asin": "B0D6TLKMGM",
+    "name": "Belkin BoostCharge Pro 3-in-1",
+    "title": "Belkin 3-in-1 MagSafe-Compatible Wireless Charging Pad with Qi2 15W - iPhone Charger - Fast Charging Wireless Charging Station for iPhone 16, 15, & 14 Series, AirPods, Apple Watch, & More - Black Black 3 in 1 Pad (New)",
+    "price_value": 15719,
+    "currency": "INR",
+    "rating": 4.2,
+    "ratings_total": 105,
+    "main_image": "https://m.media-amazon.com/images/I/51MxFeJkWRL.jpg",
+    "availability": null
+  },
+  {
+    "asin": "B09QH9L1NH",
+    "name": "Anker 555 8-in-1",
+    "title": "Anker 555 USB-C Hub (8-in-1) - for Notebook/Monitor - Memory Card Reader - microSD, SD - 100 W - USB Type C - 1 Displays Supported - 4K - 3840 x 2160-2 x USB Type-A Ports - USB Type-A - 1 x USB Type",
+    "price_value": null,
+    "currency": null,
+    "rating": 4.6,
+    "ratings_total": 113,
+    "main_image": "https://m.media-amazon.com/images/I/51T75+biwlL.jpg",
+    "availability": "Currently unavailable."
+  },
+  {
+    "asin": "B0C1Y8RPG7",
+    "name": "UGREEN Revodok Pro 313",
+    "title": "UGREEN Revodok Pro 313 Laptop Docking Station 13 in 1 4K Triple Display USB C Dock Dual HDMI, DP, 10Gbps Data Port 100W PD Gigabit Ethernet, SD/TF Card Reader Compatible for Thinkpad, Zenbook and more",
+    "price_value": null,
+    "currency": null,
+    "rating": 4,
+    "ratings_total": 374,
+    "main_image": "https://m.media-amazon.com/images/I/61oqR0EpLCL.jpg",
+    "availability": "Currently unavailable."
+  },
+  {
+    "asin": "B09GK8LBWS",
+    "name": "CalDigit TS4",
+    "title": "CalDigit TS4 Thunderbolt 4 Dock - 18 Ports, 98W Charging, 3x Thunderbolt 4 40Gb/s, 5 x USB-A, 3 x USB-C (10Gb/s), 2.5GbE, Single 8K or Dual 6K 60Hz Displays, Mac, PC, Chrome Compatible with 0.8m Cable",
+    "price_value": 57527.22,
+    "currency": "INR",
+    "rating": 4.2,
+    "ratings_total": 1669,
+    "main_image": "https://m.media-amazon.com/images/I/61RBOqHLI0L.jpg",
+    "availability": null
+  },
+  {
+    "asin": "B0DK59YKRS",
+    "name": "BenQ ScreenBar Halo 2",
+    "title": "BenQ ScreenBar Halo 2 LED Monitor Light, Wireless Controller & Backlight, Eye-Care Screen Lamp with Motion Sensor, Auto-Dimming, Adjustable Brightness & Colour Temperature, USB C Powered",
+    "price_value": 18750,
+    "currency": "INR",
+    "rating": 4.7,
+    "ratings_total": 1052,
+    "main_image": "https://m.media-amazon.com/images/I/41fmQI53UNL.jpg",
+    "availability": "In stock"
+  },
+  {
+    "asin": "B076VNFZJG",
+    "name": "BenQ ScreenBar",
+    "title": "BenQ ScreenBar E-Reading LED Computer Monitor Light Lamp with Auto-Dimming and Hue Adjustment Features, USB Powered Office Lamp, Complements with Backlight/RGB Setups, Aluminium, Pack of 1",
+    "price_value": 15115.22,
+    "currency": "INR",
+    "rating": 4.5,
+    "ratings_total": 2995,
+    "main_image": "https://m.media-amazon.com/images/I/71FpP6myfPL.jpg",
+    "availability": "In stock"
+  },
+  {
+    "asin": "B07DYRS1WH",
+    "name": "Elgato Stream Deck Mini",
+    "title": "Corsair Elgato Stream Deck Mini - Live Content Creation Controller with 6 Customizable LCD Keys, for Windows 10 and macOS 10.11 or Later",
+    "price_value": 9989,
+    "currency": "INR",
+    "rating": 4.7,
+    "ratings_total": 7744,
+    "main_image": "https://m.media-amazon.com/images/I/61w+a4IDpsL.jpg",
+    "availability": "In stock"
+  },
+  {
+    "asin": "B0CTZBR5CG",
+    "name": "Xiaomi Mi Computer Monitor Light Bar",
+    "title": "Xiaomi Mi Computer Monitor Light Bar - Easy Installation, Extra Computer Lighting w/o Taking Desktop Space, with Wireless Remote Control Adjusting Lights Easily",
+    "price_value": null,
+    "currency": null,
+    "rating": 4.5,
+    "ratings_total": 335,
+    "main_image": "https://m.media-amazon.com/images/I/519WXuJlUIL.jpg",
+    "availability": "Currently unavailable."
+  },
+  {
+    "asin": "B0FRD6N8JV",
+    "name": "Spigen ArcField 25W Qi2.2",
+    "title": "Spigen for Foldable Wireless Charger, Essential 25W Qi2.2 3-in-1 Fast Foldable Wireless Charger with Extra USB-C Charging Port, Compatible with iPhone 17 16 15 14 13 Series Airpods Apple Watch - Black",
+    "price_value": null,
+    "currency": null,
+    "rating": 3.9,
+    "ratings_total": 146,
+    "main_image": "https://m.media-amazon.com/images/I/714gj065o0L.jpg",
+    "availability": "Currently unavailable."
+  },
+  {
+    "asin": "B0D7YXQ77M",
+    "name": "ESR HaloLock CryoBoost",
+    "title": "ESR Qi2 3 in 1 Wireless Charging Station with CryoBoost, Apple Watch Charger & 15W Qi2 MagSafe Charger Stand for iPhone, Wireless Charger for Multiple Devices iPhone 15/14/13&Watch&AirPods\uff0cBlack",
+    "price_value": null,
+    "currency": null,
+    "rating": 4.5,
+    "ratings_total": 352,
+    "main_image": "https://m.media-amazon.com/images/I/713PrEKLd7L.jpg",
+    "availability": "Currently unavailable."
+  },
+  {
+    "asin": "B0B13ZBX29",
+    "name": "Graf Lantz Merino Wool Felt Pad",
+    "title": "Graf Lantz Mosen Large Merino Wool Felt Desk Pad, Luxury Non-Slip Desk Mat, Blotter for Office and Home, 31W x 19H, Granite",
+    "price_value": null,
+    "currency": null,
+    "rating": null,
+    "ratings_total": null,
+    "main_image": "https://m.media-amazon.com/images/I/61DpjJVcRVL.jpg",
+    "availability": "Currently unavailable."
+  },
+  {
+    "asin": "B0BBG6G93H",
+    "name": "K KNODEL Dual-Sided PU Leather",
+    "title": "K KNODEL Desk Mat, Blotter, Dual-Sided Office Desk Pad, Waterproof Desk Mat for Desktop, Desk Blotters, PVC Leather Pad Protector (White, 31.5\" x 15.7\") 31.5\" x 15.7\" White/Silver",
+    "price_value": 2899.31,
+    "currency": "INR",
+    "rating": 4.7,
+    "ratings_total": 52652,
+    "main_image": "https://m.media-amazon.com/images/I/717biirKDpL.jpg",
+    "availability": null
+  },
+  {
+    "asin": "B07N5K716Y",
+    "name": "Nordik Leather Desk Mat",
+    "title": "Nordik By Design Premium Non-Slip Vegan Leather Desk Protector Pad with Cable Management (Saddle Brown 35 x 17 Inch)",
+    "price_value": 4439,
+    "currency": "INR",
+    "rating": 4.7,
+    "ratings_total": 1518,
+    "main_image": "https://m.media-amazon.com/images/I/81vexwYjHZS.jpg",
+    "availability": null
+  },
+  {
+    "asin": "B0BZ55VHVP",
+    "name": "Twelve South Curve SE",
+    "title": "Twelve South Curve SE Ergonomic Aluminum Laptop and MacBook Stand with Anti-Slip Silicone to Prevent Scratching | Compatible with 11\" to 17\u201d laptops",
+    "price_value": null,
+    "currency": null,
+    "rating": 4.1,
+    "ratings_total": 117,
+    "main_image": "https://m.media-amazon.com/images/I/713ag5t6RqL.jpg",
+    "availability": "Currently unavailable."
+  },
+  {
+    "asin": "B0C275CR1C",
+    "name": "BESIGN LS03",
+    "title": "BESIGN LS03 Aluminum Laptop Stand, Ergonomic Detachable Computer Stand, Notebook Holder, Laptop Mount Compatible with Air, Pro, Dell, HP, Lenovo More 10-15.6\" Laptops, Space Gray D-Space Gray",
+    "price_value": 5951,
+    "currency": "INR",
+    "rating": 4.7,
+    "ratings_total": 1419,
+    "main_image": "https://m.media-amazon.com/images/I/71utuSiUTXL.jpg",
+    "availability": null
+  },
+  {
+    "asin": "B077YSN49G",
+    "name": "Oakywood Walnut Laptop Dock",
+    "title": "Oakywood Laptop Dock {Walnut}",
+    "price_value": null,
+    "currency": null,
+    "rating": 4.7,
+    "ratings_total": 77,
+    "main_image": "https://m.media-amazon.com/images/I/51lH+kSTH-L.jpg",
+    "availability": "Currently unavailable."
+  },
+  {
+    "asin": "B01M26UJ1C",
+    "name": "VariDesk Pro Plus 36",
+    "title": "VARIDESK \u2013 Height Adjustable Standing Desk Converter \u2013 Pro Plus 36 \u2013 Stand Up Desk for Dual Monitors \u2013 Butcher Block",
+    "price_value": null,
+    "currency": null,
+    "rating": 4.5,
+    "ratings_total": 64,
+    "main_image": "https://m.media-amazon.com/images/I/7169skNtIXL.jpg",
+    "availability": "Currently unavailable."
+  },
+  {
+    "asin": "B0C514C64X",
+    "name": "VIVO 32-inch K-Series (check stock)",
+    "title": "VIVO Dark Gray 32 inch Standing Desk Converter, DESK-V000KG | Height Adjustable, Stand Up Desk Riser, Wide Keyboard Tray, Dual Monitor and Laptop Workstation, Black Frame, K Series 32\" Gray",
+    "price_value": 96114.3,
+    "currency": "INR",
+    "rating": 4.5,
+    "ratings_total": 2371,
+    "main_image": "https://m.media-amazon.com/images/I/71BUqPctePL.jpg",
+    "availability": null
+  },
+  {
+    "asin": "B01NBIX9WB",
+    "name": "Uncaged Ergonomics CHANGEdesk Mini",
+    "title": "CHANGEdesk Mini Small Adjustable Height Standing Desk Converter for Laptop MacBook Single Monitor Desktop Computer Portable Lightweight Ergonomic sit Stand up Corner Riser Affordable Compact Tabletop White",
+    "price_value": null,
+    "currency": null,
+    "rating": 4.4,
+    "ratings_total": 203,
+    "main_image": "https://m.media-amazon.com/images/I/71wlPezbL+L.jpg",
+    "availability": "Currently unavailable."
+  },
+  {
+    "asin": "B0076O1MQY",
+    "name": "Ergotron WorkFit-S",
+    "title": "Ergotron WorkFit-S Dual Monitor with Worksurface Plus 33-349-200",
+    "price_value": null,
+    "currency": null,
+    "rating": 4.2,
+    "ratings_total": 187,
+    "main_image": "https://m.media-amazon.com/images/I/61NiaSTbQTL.jpg",
+    "availability": "Currently unavailable."
+  },
+  {
+    "asin": "B0DRC9F4FS",
+    "name": "Anker MagGo Qi2 Pad",
+    "title": "Anker MagSafe Charger Pad Compatible, MagGo iPhone 16 Wireless Charging Pad, Qi2 Certified 15W Wireless Charger, for iPhone 16/16 Plus/16 Pro/16 Pro Max/15/14/13/12 Series (Charger Not Included)",
+    "price_value": null,
+    "currency": null,
+    "rating": 4.5,
+    "ratings_total": 807,
+    "main_image": "https://m.media-amazon.com/images/I/51++zVUoEOL.jpg",
+    "availability": "Currently unavailable."
+  },
+  {
+    "asin": "B0DBP4PT21",
+    "name": "Quntis Monitor Light Bar",
+    "title": "Quntis Curved Monitor Light Bar with Remote &Touch, Auto Adjustable Brightness and Colour Temperature Eye-Care USB Computer Lamp with Multifunction Shelf Screen Light Bar, No Glare Home Office Gaming ScreenLinear Curved",
+    "price_value": 9599,
+    "currency": "INR",
+    "rating": 4.4,
+    "ratings_total": 16,
+    "main_image": "https://m.media-amazon.com/images/I/71tO6KK6d1L.jpg",
+    "availability": null
+  },
+  {
+    "asin": "B0FP57SR72",
+    "name": "PROTEQ Desk Mat with Wireless Charging",
+    "title": "PROTEQ PU Vegan Leather Desk Mat | Compatible with All Mobiles & Earbuds Wireless Charging | Reversible Deskspread Mat for Work from Home/Office/Gaming - Extended Mousepad and Keyboard Desk (Black)",
+    "price_value": 2900,
+    "currency": "INR",
+    "rating": 3.5,
+    "ratings_total": 2,
+    "main_image": "https://m.media-amazon.com/images/I/61b66eMimFL.jpg",
+    "availability": "In stock"
+  },
+  {
+    "asin": "B0DBTTC2CH",
+    "name": "Anker Zolo Braided USB-C Cable",
+    "title": "Anker Zolo USB C to USB C Cable, Braided and Dirt-Free Type C Fast Charging Cable, Slim Connector, for iPhone 16 Series, MacBook (240W) (Black, 3ft) Black 3ft",
+    "price_value": 716,
+    "currency": "INR",
+    "rating": 4.4,
+    "ratings_total": 5059,
+    "main_image": "https://m.media-amazon.com/images/I/61b-Wc9o+SL.jpg",
+    "availability": "In stock"
+  },
+  {
+    "asin": "B0F53KGSFZ",
+    "name": "Amazon Basics 20,000mAh Power Bank",
+    "title": "Amazon Basics 20,000mAh 35W Fast Charging Power Bank | Nano Size | Triple Output | Two Way Fast Charge | Charge Three Devices Simultaneously | - Silver Wired 20000 mAh 35W",
+    "price_value": null,
+    "currency": null,
+    "rating": 4.2,
+    "ratings_total": 287,
+    "main_image": "https://m.media-amazon.com/images/I/61NC+hoYdSL.jpg",
+    "availability": "Currently unavailable."
+  },
+  {
+    "name": "MSI Forge GK600 TKL Wireless",
+    "found_asin": "B0F66JWD47",
+    "title": "EvoFox Ronin Mechanical Keyboards Wireless (BT+2.4GHz+Wired), 9 Layer Structure, Gasket Mount, 75% Layout, 2 Layer Sound Dampening Red Switches, Per-Key RGB, 1000Hz, Windows Software -Black",
+    "price_value": 3499,
+    "currency": "INR",
+    "image": "https://m.media-amazon.com/images/I/614ZLtWrVOL._AC_UY218_.jpg",
+    "note": "SEARCH RESULT \u2014 verify this is the correct product before using"
+  },
+  {
+    "name": "Orbitkey Desk Mat",
+    "found_asin": "B08461VC1Z",
+    "title": "scarters Reversible Deskspread | 90 * 45cm | Dual Tone | Anti Slip | Vegan PU | for Work from Home and Office (Blue & Yellow)",
+    "price_value": 850,
+    "currency": "INR",
+    "image": "https://m.media-amazon.com/images/I/519TZuBfuwL._AC_UY218_.jpg",
+    "note": "SEARCH RESULT \u2014 verify this is the correct product before using"
+  }
+]
+
+=== END PASTE ===
+
