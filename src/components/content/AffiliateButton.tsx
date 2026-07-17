@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { extractAsin, generateAffiliateUrl, getCountryFromCookie } from "@/lib/affiliate";
 
 interface AffiliateButtonProps {
   href: string;
@@ -9,25 +11,32 @@ interface AffiliateButtonProps {
   fullWidth?: boolean;
 }
 
+/**
+ * Geo-targeted Amazon affiliate button.
+ *
+ * Accepts any Amazon URL (or raw `#` for unconfirmed products), extracts
+ * the ASIN, and regenerates the link for the visitor's country using the
+ * centralized marketplace config.
+ *
+ * - Non-Amazon URLs pass through unchanged.
+ * - `href="#"` passes through unchanged (not-yet-confirmed products).
+ * - Falls back to amazon.com / iwritetech-20 if country is unknown.
+ */
 export function AffiliateButton({ href, children, className = "", fullWidth = false }: AffiliateButtonProps) {
+  // Attempt to extract ASIN and regenerate a geo-targeted URL
   let finalHref = href;
-  const affiliateTag = process.env.NEXT_PUBLIC_AFFILIATE_TAG;
-  
-  if (affiliateTag && href.includes("amazon.com")) {
-    try {
-      const url = new URL(href);
-      url.searchParams.set("tag", affiliateTag);
-      finalHref = url.toString();
-    } catch (e) {
-      // Ignore invalid URL
-    }
+
+  const asin = extractAsin(href);
+  if (asin) {
+    const country = getCountryFromCookie();
+    finalHref = generateAffiliateUrl(asin, country);
   }
 
   return (
     <Link 
       href={finalHref} 
       target="_blank" 
-      rel="noopener noreferrer"
+      rel="sponsored noopener noreferrer"
       className={`inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 rounded-full group duration-300 ${fullWidth ? "w-full" : ""} ${className}`}
     >
       {children}
