@@ -308,7 +308,10 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="w-full max-w-none">
               <MDXRemote
                 source={content}
-                components={MDXComponents}
+                components={{
+                  ...MDXComponents,
+                  FAQAccordion: (props: any) => <MDXComponents.FAQAccordion {...props} items={faqs} />
+                }}
                 options={{
                   mdxOptions: {
                     remarkPlugins: [remarkGfm],
