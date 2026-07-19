@@ -74,7 +74,7 @@ export function extractFAQs(markdown: string): { question: string; answer: strin
     const itemsText = accordionMatch[1];
     
     // Match the question and answer pairs
-    const itemRegex = /{\s*question:\s*["'](.*?)["'],\s*answer:\s*["'](.*?)["']\s*}/gs;
+    const itemRegex = /{\s*question:\s*["']([\s\S]*?)["'],\s*answer:\s*["']([\s\S]*?)["']\s*}/g;
     
     let match;
     while ((match = itemRegex.exec(itemsText)) !== null) {
