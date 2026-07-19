@@ -5,9 +5,9 @@ import { AffiliateButton } from "./AffiliateButton";
 interface ProductCardProps {
   name: string;
   image: string;
-  description: string;
+  description?: string;
   price?: string;
-  link: string;
+  link?: string;
   badge?: string;
   rating?: string;
 }
@@ -51,15 +51,19 @@ export function ProductCard({ name, image, description, price, link, badge, rati
           )}
         </div>
         
-        <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
-          {description}
-        </p>
+        {description && (
+          <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
+            {description}
+          </p>
+        )}
         
-        <div className="mt-auto">
-          <AffiliateButton href={link} fullWidth>
-            Check Price
-          </AffiliateButton>
-        </div>
+        {link && (
+          <div className="mt-auto">
+            <AffiliateButton href={link} fullWidth>
+              Check Price
+            </AffiliateButton>
+          </div>
+        )}
       </div>
     </div>
   );
