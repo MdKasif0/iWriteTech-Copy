@@ -65,6 +65,29 @@ export function extractTableOfContents(markdown: string): TOCItem[] {
   return headings;
 }
 
+export function extractFAQs(markdown: string): { question: string; answer: string }[] {
+  const faqs: { question: string; answer: string }[] = [];
+  // Find the FAQAccordion component
+  const accordionMatch = markdown.match(/<FAQAccordion[^>]*items={\[([\s\S]*?)\]}/);
+  
+  if (accordionMatch && accordionMatch[1]) {
+    const itemsText = accordionMatch[1];
+    
+    // Match the question and answer pairs
+    const itemRegex = /{\s*question:\s*["'](.*?)["'],\s*answer:\s*["'](.*?)["']\s*}/gs;
+    
+    let match;
+    while ((match = itemRegex.exec(itemsText)) !== null) {
+      faqs.push({
+        question: match[1].trim(),
+        answer: match[2].trim()
+      });
+    }
+  }
+  
+  return faqs;
+}
+
 export function getAllPosts(): PostMeta[] {
   if (!fs.existsSync(POSTS_DIR)) return [];
 

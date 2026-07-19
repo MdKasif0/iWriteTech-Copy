@@ -9,7 +9,7 @@ import { Link as LinkIcon, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-import { getAllPosts, getPostBySlug, getRelatedPosts, extractTableOfContents } from "@/lib/posts";
+import { getAllPosts, getPostBySlug, getRelatedPosts, extractTableOfContents, extractFAQs } from "@/lib/posts";
 import { MDXComponents } from "@/components/content/MDXComponents";
 import { AuthorCard } from "@/components/blog/AuthorCard";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
@@ -89,6 +89,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const { meta, content } = postData;
   const toc = extractTableOfContents(content);
+  const faqs = extractFAQs(content);
   const relatedPosts = getRelatedPosts(meta, 3);
   
   // Format date
@@ -157,6 +158,19 @@ export default async function BlogPostPage({ params }: Props) {
     }
   };
 
+  const faqJsonLd = faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  } : null;
+
   return (
     <>
       <script
@@ -167,6 +181,12 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <article className="container mx-auto px-4 py-12 md:py-20 max-w-6xl">
         {/* Breadcrumb */}
         <nav className="flex items-center text-sm text-muted-foreground mb-8" aria-label="Breadcrumb">
