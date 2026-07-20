@@ -10,23 +10,20 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPage() {
-  const lastUpdated = "[Month Day, Year]";
+  const lastUpdated = "July 20, 2026";
 
   return (
     <div className="container mx-auto px-4 py-16 md:py-24 max-w-4xl">
       <header className="mb-16">
         <h1 className="display-lg mb-6">Privacy Policy</h1>
         <p className="text-muted-foreground mono-data">Last updated: {lastUpdated}</p>
-        <div className="mt-8 p-4 bg-muted/50 rounded-lg border border-border text-sm text-muted-foreground">
-          <em>Template — replace all bracketed placeholders <code>[like this]</code> before publishing. Have a legal professional review this before launch, particularly if you expect meaningful EU/UK (GDPR) or California (CCPA) traffic.</em>
-        </div>
       </header>
 
       <div className="space-y-12">
         <section>
           <h2 className="heading mb-6">1. Introduction</h2>
           <div className="text-lg text-foreground/80 leading-relaxed space-y-6">
-            <p>iWriteTech (&quot;iWriteTech,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates [iwritetech.com] (the &quot;Site&quot;). This Privacy Policy explains what information we collect when you visit the Site, how we use it, and the choices you have.</p>
+            <p>iWriteTech (&quot;iWriteTech,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates iwritetech.com (the &quot;Site&quot;). This Privacy Policy explains what information we collect when you visit the Site, how we use it, and the choices you have.</p>
             <p>By using the Site, you agree to the collection and use of information as described in this policy. If you don&apos;t agree, please don&apos;t use the Site.</p>
           </div>
         </section>
@@ -117,11 +114,6 @@ export default function PrivacyPage() {
                     <td className="py-4 pr-6">Affiliate program / product links</td>
                     <td className="py-4"><a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=468496" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">amazon.com/privacy</a></td>
                   </tr>
-                  <tr>
-                    <td className="py-4 pr-6">[Email service provider, once selected]</td>
-                    <td className="py-4 pr-6">Newsletter delivery</td>
-                    <td className="py-4"><a href="#" className="text-primary hover:underline">[add link]</a></td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -148,7 +140,7 @@ export default function PrivacyPage() {
               <li><strong>Object to or restrict</strong> certain processing (where applicable under GDPR)</li>
               <li><strong>Data portability</strong> (where applicable under GDPR)</li>
             </ul>
-            <p>To exercise any of these rights, contact us at [privacy@iwritetech.com]. We&apos;ll respond within a reasonable timeframe and in accordance with applicable law.</p>
+            <p>To exercise any of these rights, contact us at mdkasifuddin123@gmail.com. We&apos;ll respond within a reasonable timeframe and in accordance with applicable law.</p>
             <p><strong>California residents:</strong> you have rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information is collected and the right to opt out of its sale (note: we do not sell personal information).</p>
             <p><strong>EU/UK residents:</strong> our legal basis for processing your data is typically legitimate interest (site analytics, security) or consent (newsletter signups, non-essential cookies).</p>
           </div>
@@ -178,7 +170,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="heading mb-6">11. International Visitors</h2>
           <div className="text-lg text-foreground/80 leading-relaxed space-y-6">
-            <p>iWriteTech is accessed globally. If you&apos;re visiting from outside [your primary country of operation], your information may be processed in [country], which may have different data protection laws than your home country.</p>
+            <p>iWriteTech is accessed globally. If you&apos;re visiting from outside India, your information may be processed in India, which may have different data protection laws than your home country.</p>
           </div>
         </section>
 
@@ -193,7 +185,7 @@ export default function PrivacyPage() {
           <h2 className="heading mb-6">13. Contact Us</h2>
           <div className="text-lg text-foreground/80 leading-relaxed space-y-6">
             <p>Questions about this Privacy Policy? Reach out at:</p>
-            <p><strong>Email:</strong> [privacy@iwritetech.com]<br /><strong>[Business address, if applicable]</strong></p>
+            <p><strong>Email:</strong> mdkasifuddin123@gmail.com</p>
           </div>
         </section>
       </div>
