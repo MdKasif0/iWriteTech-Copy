@@ -5,8 +5,9 @@ import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
-import { Link as LinkIcon, ChevronRight } from "lucide-react";
+import { CalendarDays, Clock, ChevronLeft, ChevronRight, User, Tag } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { ShareButtons } from "@/components/blog/ShareButtons";
 import { Button } from "@/components/ui/button";
 
 import { getAllPosts, getPostBySlug, getRelatedPosts, extractTableOfContents, extractFAQs } from "@/lib/posts";
@@ -335,14 +336,7 @@ export default async function BlogPostPage({ params }: Props) {
             {/* Share Footer */}
             <div className="mt-12 py-8 border-y border-border flex flex-col sm:flex-row items-center justify-between gap-6">
               <span className="font-semibold text-lg">Share this article</span>
-              <div className="flex items-center gap-3">
-                <Button variant="outline" size="icon" className="rounded-full" aria-label="Share on X">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted-foreground"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
-                </Button>
-                <Button variant="outline" size="icon" className="rounded-full" aria-label="Copy link">
-                  <LinkIcon className="h-4 w-4 text-muted-foreground hover:text-foreground transition-colors" />
-                </Button>
-              </div>
+              <ShareButtons title={meta.title} />
             </div>
 
             {/* Author Bio Footer */}
