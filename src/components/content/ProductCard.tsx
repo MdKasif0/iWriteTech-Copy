@@ -15,13 +15,13 @@ interface ProductCardProps {
 export function ProductCard({ name, image, description, price, link, badge, rating }: ProductCardProps) {
   return (
     <div className="bg-card border border-border rounded-xl overflow-hidden flex flex-col md:flex-row my-8 transition-shadow hover:shadow-md">
-      <div className="w-full md:w-2/5 aspect-[4/3] md:aspect-auto relative bg-muted shrink-0 overflow-hidden">
+      <div className="w-full md:w-2/5 aspect-[4/3] md:aspect-auto md:min-h-[250px] relative bg-white shrink-0 overflow-hidden border-b md:border-b-0 md:border-r border-border">
         <Image 
           src={image} 
           alt={name} 
           fill
           sizes="(max-width: 768px) 100vw, 40vw"
-          className="object-cover transition-transform duration-500 hover:scale-105" 
+          className="object-contain p-6 transition-transform duration-500 hover:scale-105" 
         />
         {badge && (
           <div className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
