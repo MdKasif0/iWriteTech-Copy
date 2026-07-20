@@ -63,8 +63,8 @@ export default function ContactPage() {
         <div className="bg-card border border-border rounded-3xl p-8 md:p-12 shadow-sm">
           <h2 className="text-2xl font-semibold mb-8 text-foreground">Send us a message</h2>
           
-          {/* NOTE: Wire this form to an endpoint like Netlify Forms (data-netlify="true") or Formspree later */}
-          <form className="space-y-6" action="#" method="POST">
+          <form name="contact" method="POST" data-netlify="true" className="space-y-6">
+            <input type="hidden" name="form-name" value="contact" />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
