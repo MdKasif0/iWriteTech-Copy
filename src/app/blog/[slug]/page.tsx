@@ -9,6 +9,8 @@ import { CalendarDays, Clock, ChevronLeft, ChevronRight, User, Tag } from "lucid
 import { Badge } from "@/components/ui/badge";
 import { ShareButtons } from "@/components/blog/ShareButtons";
 import { Button } from "@/components/ui/button";
+import { AdBanner } from "@/components/ads/AdBanner";
+import { AD_SLOTS } from "@/lib/adsense";
 
 import { getAllPosts, getPostBySlug, getRelatedPosts, extractTableOfContents, extractFAQs } from "@/lib/posts";
 import { MDXComponents } from "@/components/content/MDXComponents";
@@ -247,6 +249,9 @@ export default async function BlogPostPage({ params }: Props) {
           )}
         </header>
 
+        {/* Ad Placement 1: Below Hero Image */}
+        {AD_SLOTS.top && <AdBanner adSlot={AD_SLOTS.top} />}
+
         {/* Main Content & TOC Layout */}
         <div className="flex flex-col lg:flex-row gap-12 xl:gap-20 relative">
           
@@ -322,6 +327,9 @@ export default async function BlogPostPage({ params }: Props) {
               />
             </div>
             
+            {/* Ad Placement 2: Above Tags / End of Article */}
+            {AD_SLOTS.bottom && <AdBanner adSlot={AD_SLOTS.bottom} className="mt-12" />}
+
             {/* Tags */}
             {meta.tags && meta.tags.length > 0 && (
               <div className="mt-16 flex flex-wrap gap-2">
