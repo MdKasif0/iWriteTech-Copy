@@ -7,6 +7,7 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { CalendarDays, Clock, ChevronLeft, ChevronRight, User, Tag } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { ArticleViewTracker } from "@/components/blog/ArticleViewTracker";
 import { ShareButtons } from "@/components/blog/ShareButtons";
 import { Button } from "@/components/ui/button";
 import { AdBanner } from "@/components/ads/AdBanner";
@@ -190,6 +191,7 @@ export default async function BlogPostPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       )}
+      <ArticleViewTracker slug={meta.slug} category={meta.category} />
       <article className="container mx-auto px-4 py-12 md:py-20 max-w-6xl">
         {/* Breadcrumb */}
         <nav className="flex items-center text-sm text-muted-foreground mb-8" aria-label="Breadcrumb">
