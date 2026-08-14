@@ -39,17 +39,27 @@ export function AffiliateButton({ href, hrefUS, text, children, className = "", 
     finalHref = hrefUS;
   }
 
+  let destinationHost: string | undefined;
+  try {
+    destinationHost = new URL(finalHref).hostname;
+  } catch {
+    destinationHost = undefined;
+  }
+
   return (
     <Link 
       href={finalHref} 
       target="_blank" 
       rel="sponsored noopener noreferrer"
-      onClick={() =>
+      onClick={() => {
+        if (!destinationHost) return;
+
         track("affiliate_link_clicked", {
           asin: asin ?? "unknown",
           marketplace: country,
-        })
-      }
+          destination_host: destinationHost,
+        });
+      }}
       className={`inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 rounded-full group duration-300 ${fullWidth ? "w-full" : ""} ${className}`}
     >
       {text || children}

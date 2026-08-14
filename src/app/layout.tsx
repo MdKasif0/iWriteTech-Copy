@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { ReadingProgressBar } from "@/components/layout/ReadingProgressBar";
+import { HELLYEAH_TRACKER_ID } from "@/lib/xray";
 import "./globals.css";
 
 const literata = Literata({
@@ -122,8 +123,8 @@ export default function RootLayout({
           `}
         </Script>
         <Analytics
-          websiteId={process.env.NEXT_PUBLIC_HELLYEAH_TRACKER_ID as string}
-          env={process.env.NEXT_PUBLIC_HELLYEAH_TRACKER_ENV as string}
+          websiteId={HELLYEAH_TRACKER_ID}
+          env={process.env.NEXT_PUBLIC_HELLYEAH_TRACKER_ENV}
           domains="iwritetech.com,www.iwritetech.com"
         />
         <ThemeProvider

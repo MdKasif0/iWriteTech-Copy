@@ -5,8 +5,20 @@ import { ComparisonTable } from "./ComparisonTable";
 import { ProsConsBox } from "./ProsConsBox";
 import { CalloutBox } from "./CalloutBox";
 import { AffiliateButton } from "./AffiliateButton";
+import { AffiliateLink } from "./AffiliateLink";
 import { ProductCard } from "./ProductCard";
 import { FAQAccordion } from "./FAQAccordion";
+
+function isAmazonAffiliateLink(href: unknown) {
+  if (typeof href !== "string") return false;
+
+  try {
+    const hostname = new URL(href).hostname.toLowerCase();
+    return hostname === "amzn.to" || /(^|\.)amazon\.[a-z.]+$/.test(hostname);
+  } catch {
+    return false;
+  }
+}
 
 export const MDXComponents = {
   // Overrides for standard markdown elements
@@ -17,12 +29,25 @@ export const MDXComponents = {
   p: (props: any) => <p className="text-lg leading-relaxed text-foreground/80 mb-6" {...props} />,
   a: ({ href, children, ...props }: any) => {
     const isInternal = href && (href.startsWith("/") || href.startsWith("#"));
+    const isAffiliateLink = isAmazonAffiliateLink(href);
     
     if (isInternal) {
       return (
         <Link href={href} className="font-medium text-foreground underline decoration-primary/30 decoration-2 underline-offset-4 hover:decoration-primary transition-colors" {...props}>
           {children}
         </Link>
+      );
+    }
+
+    if (isAffiliateLink) {
+      return (
+        <AffiliateLink
+          href={href}
+          className="font-medium text-foreground underline decoration-primary/30 decoration-2 underline-offset-4 hover:decoration-primary transition-colors"
+          {...props}
+        >
+          {children}
+        </AffiliateLink>
       );
     }
     
