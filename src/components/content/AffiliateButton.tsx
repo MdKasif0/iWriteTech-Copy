@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { track } from "@hellyeah/x-ray";
 import { extractAsin, generateAffiliateUrl, getCountryFromCookie } from "@/lib/affiliate";
 
 interface AffiliateButtonProps {
@@ -43,6 +44,12 @@ export function AffiliateButton({ href, hrefUS, text, children, className = "", 
       href={finalHref} 
       target="_blank" 
       rel="sponsored noopener noreferrer"
+      onClick={() =>
+        track("affiliate_link_clicked", {
+          asin: asin ?? "unknown",
+          marketplace: country,
+        })
+      }
       className={`inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 rounded-full group duration-300 ${fullWidth ? "w-full" : ""} ${className}`}
     >
       {text || children}

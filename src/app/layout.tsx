@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { Analytics } from "@hellyeah/x-ray/next";
 import { Literata, Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
@@ -57,8 +58,11 @@ export const metadata: Metadata = {
     google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
   },
   icons: {
-    icon: "/logo.svg",
-    apple: "/logo.svg",
+    icon: [
+      { url: "/iwritetech-logo-512.png", type: "image/png", sizes: "512x512" },
+      { url: "/logo.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/iwritetech-logo-512.png", sizes: "512x512" }],
   },
   other: {
     "google-adsense-account": "ca-pub-6238466387091690",
@@ -76,7 +80,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "iWriteTech",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://iwritetech.com",
-    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://iwritetech.com"}/logo.svg`,
+    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://iwritetech.com"}/iwritetech-logo-512.png`,
     sameAs: [
       "https://twitter.com/iwritetech",
       "https://instagram.com/iwritetech",
@@ -117,6 +121,11 @@ export default function RootLayout({
             });
           `}
         </Script>
+        <Analytics
+          websiteId={process.env.NEXT_PUBLIC_HELLYEAH_TRACKER_ID as string}
+          env={process.env.NEXT_PUBLIC_HELLYEAH_TRACKER_ENV as string}
+          domains="iwritetech.com,www.iwritetech.com"
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

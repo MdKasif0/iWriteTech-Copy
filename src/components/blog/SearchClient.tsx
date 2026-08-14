@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Search, FileText, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { cv, track } from "@hellyeah/x-ray";
 import type { PostMeta } from "@/lib/posts";
 
 interface SearchClientProps {
@@ -49,6 +50,18 @@ export function SearchClient({ allPosts }: SearchClientProps) {
   const hasQuery = query.trim().length > 0;
   const hasPosts = allPosts.length > 0;
 
+  const handleSearchKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key !== "Enter") return;
+
+    const searchTerm = query.trim();
+    if (!searchTerm) return;
+
+    track(cv.search, {
+      query_length: searchTerm.length,
+      result_count: results.length,
+    });
+  };
+
   return (
     <div className="container mx-auto px-4 py-12 md:py-20">
       {/* Header */}
@@ -75,6 +88,7 @@ export function SearchClient({ allPosts }: SearchClientProps) {
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={handleSearchKeyDown}
             placeholder="Search articles..."
             className="w-full h-14 pl-12 pr-12 rounded-xl bg-card border border-border text-foreground text-lg placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
             aria-label="Search articles"

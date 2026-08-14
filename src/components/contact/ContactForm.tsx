@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { cv, identify, track } from "@hellyeah/x-ray";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -13,6 +14,8 @@ export function ContactForm() {
     
     const form = e.currentTarget;
     const formData = new FormData(form);
+    const email = String(formData.get("email") ?? "");
+    const subject = String(formData.get("subject") ?? "");
     
     // Netlify requires urlencoded form data
     const data = new URLSearchParams(formData as any).toString();
@@ -25,6 +28,11 @@ export function ContactForm() {
       });
       
       if (response.ok) {
+        identify(email, { email });
+        track(cv.contact, {
+          form_id: "contact",
+          subject,
+        });
         setStatus("success");
         form.reset();
       } else {
