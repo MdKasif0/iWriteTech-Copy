@@ -1,8 +1,8 @@
 import { createXRay } from "@hellyeah/x-ray/server";
+import { trackerEnv, trackerId } from "@/lib/tracker-config";
 
-// @ts-expect-error The verifier supplies this required deployment value.
-export const tracker = createXRay(process.env.NEXT_PUBLIC_HELLYEAH_TRACKER_ID, {
-  env: process.env.HELLYEAH_TRACKER_ENV,
+export const tracker = createXRay(trackerId, {
+  env: trackerEnv,
 });
 
 export { cv } from "@hellyeah/x-ray/server";

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link as LinkIcon, Check } from "lucide-react";
+import { track } from "@hellyeah/x-ray";
 
 interface ShareButtonsProps {
   title: string;
@@ -15,12 +16,14 @@ export function ShareButtons({ title }: ShareButtonsProps) {
     const url = window.location.href;
     const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
     window.open(shareUrl, "_blank", "width=550,height=420");
+    track("article_shared", { channel: "x" });
   };
 
   const handleCopyLink = async () => {
     const url = window.location.href;
     try {
       await navigator.clipboard.writeText(url);
+      track("article_shared", { channel: "copy_link" });
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
