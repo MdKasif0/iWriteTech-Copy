@@ -7,6 +7,7 @@ import { CalloutBox } from "./CalloutBox";
 import { AffiliateButton } from "./AffiliateButton";
 import { ProductCard } from "./ProductCard";
 import { FAQAccordion } from "./FAQAccordion";
+import { TrackedExternalLink } from "./TrackedExternalLink";
 
 export const MDXComponents = {
   // Overrides for standard markdown elements
@@ -27,15 +28,15 @@ export const MDXComponents = {
     }
     
     return (
-      <a 
-        href={href} 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <TrackedExternalLink
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
         className="font-medium text-foreground underline decoration-primary/30 decoration-2 underline-offset-4 hover:decoration-primary transition-colors"
         {...props}
       >
         {children}
-      </a>
+      </TrackedExternalLink>
     );
   },
   ul: (props: any) => <ul className="list-disc list-outside pl-6 mb-6 space-y-2 text-lg text-foreground/80 marker:text-primary" {...props} />,

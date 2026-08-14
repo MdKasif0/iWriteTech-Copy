@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { cv, getVisitorId, identify, track } from "@hellyeah/x-ray";
+import { getVisitorId, identify } from "@hellyeah/x-ray";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -29,10 +29,6 @@ export function ContactForm() {
       
       if (response.ok) {
         identify(email, { email });
-        track(cv.contact, {
-          form_id: "contact",
-          subject,
-        });
         void fetch("/api/analytics/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
